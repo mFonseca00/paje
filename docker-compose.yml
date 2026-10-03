@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: paje_postgres
+    environment:
+      POSTGRES_DB: paje
+      POSTGRES_USER: paje_user
+      POSTGRES_PASSWORD: paje_senha
+    ports:
+      - "5433:5432"
+    volumes:
+      - paje_pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  paje_pgdata:

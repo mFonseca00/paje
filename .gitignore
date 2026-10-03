@@ -1,0 +1,48 @@
+# Ambiente e configurações sensíveis
+.env
+
+# Bulas baixadas (temporárias, apagadas após processamento)
+docs/bulas/
+
+# Markdowns convertidos (temporários, apenas para testes)
+docs/markdown_bulas/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# IDEs
+.agent/
+.vscode/
+.opencode/
+.claude/
+.idea/
+*.swp
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos gerados pelo Quarto
+MODULOS.html
+MODULOS_files/
+
+# Artefatos de debug
+system_prompt_debug.txt
+*_debug.txt
+
+# Saída gerada
+output/

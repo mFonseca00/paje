@@ -1,0 +1,103 @@
+Considere a seguinte descrição para um projeto que estou pretendendo implementar:
+Visão Geral do Sistema
+O sistema é uma pipeline automatizada para aquisição de bulas a partir do bulário eletrônico da ANVISA, extração dos dados presentes nestas bulas através de técnicas de prompting e uso de grandes modelos de linguagem (LLMs) e armazenamento das informações extraídas em um banco de dados. O foco é exclusivamente na extração e estruturação de contra-indicações e interações medicamentosas.
+
+O escopo de bulas utilizadas como referência são as dos medicamentos presentes na RENAME (Relação Nacional de Medicamentos Essenciais), em formato PDF, em língua portuguesa.
+
+Etapa 1 — Coleta das Bulas
+A coleta é feita a partir do bulário eletrônico da ANVISA via dois endpoints identificados a partir do estudo do repositório open source bulario-api.
+
+Endpoint de busca por nome:
+
+
+GET https://consultas.anvisa.gov.br/api/consulta/bulario?count=4&filter%5BnomeProduto%5D=NOME_DO_PRODUTO&page=1
+Headers: accept, accept-language, authorization: Guest, cache-control: no-cache, if-modified-since, pragma, cookie, Referer.
+
+A resposta retorna uma lista de medicamentos com os campos idBulaPacienteProtegido e idBulaProfissionalProtegido, além de idProduto, numeroRegistro, nomeProduto, expediente, razaoSocial, cnpj, numeroTransacao, data, numProcesso, dataAtualizacao, totalElements, totalPages.
+
+Endpoint de download do PDF:
+
+
+GET https://consultas.anvisa.gov.br/api/consulta/medicamentos/arquivo/bula/parecer/ID_BULA/?Authorization=
+Headers: mesmos do endpoint de busca. Salva o arquivo como bula.pdf.
+
+O fluxo é: busca por nome → obtém os IDs → download dos PDFs de forma sequencial.
+
+Pré-processamento dos PDFs: após o download, os arquivos passam por uma etapa de pré-processamento para estruturar o conteúdo textual. Uma possibilidade em estudo é a utilização do Docling, que converte o PDF em formato estruturado como JSON, preservando a hierarquia de seções e títulos. Com isso, apenas as seções de interesse (contra-indicações e interações medicamentosas) seriam extraídas e encaminhadas ao modelo. A definição da ferramenta ocorrerá durante o desenvolvimento.
+
+Etapa 2 — Extração de Dados via LLM
+O texto das bulas é formatado como markdown antes de ser submetido ao modelo. Para cada bula, um prompt pré-determinado extrai apenas as informações de contra-indicações e interações medicamentosas.
+
+Prompt: será elaborado durante o desenvolvimento, versionado, e sua eficiência comparada com versões anteriores. A técnica adotada é Few-Shot Prompting: exemplos reais de bulas com extrações previamente validadas por humanos são injetados diretamente nas instruções do sistema para que o modelo aprenda por analogia.
+
+Resposta do agente: definida em formato JSON.
+
+Framework e linguagem: Python com Pydantic AI, que oferece suporte a bibliotecas para modelos de diferentes providers.
+
+Estratégia de contexto: encaminhar ao modelo apenas as seções da bula diretamente relacionadas às informações de interesse (contra-indicações e interações medicamentosas), reduzindo o volume de tokens e aumentando a precisão.
+
+Critérios de escolha do modelo LLM:
+
+Janela de contexto suportada, considerando a extensão das seções das bulas
+Suporte nativo a saída estruturada em JSON
+Disponibilidade para execução local via ferramentas como Ollama, sem depender de APIs externas pagas
+Após os testes iniciais com modelos locais, será avaliada a viabilidade de uso e se há necessidade de utilizar modelos via APIs pagas.
+
+Etapa 3 — Armazenamento dos Dados
+Banco de dados: PostgreSQL, com suporte a tipos de dados complexos como JSONB.
+
+Tabelas principais:
+
+medicamentos: informações básicas de identificação, como nome comercial e substância ativa.
+bulas: metadados de cada bula coletada, incluindo referências aos arquivos em disco e o campo status_processamento_ia. Este campo assume os valores PENDENTE, PROCESSADO ou ERRO, controlando a mudança de estado na pipeline. Uma bula entra com status PENDENTE e só avança para PROCESSADO após a extração ser concluída com sucesso. Também possui um campo JSONB com a resposta JSON completa retornada pelo modelo.
+contraindicacoes: dados extraídos pelo agente de forma normalizada, associados à bula de origem via chave estrangeira.
+interacoes_medicamentosas: dados extraídos pelo agente de forma normalizada, associados à bula de origem via chave estrangeira.
+A resposta JSON completa do modelo é preservada na tabela bulas para auditoria, rastreamento de falhas e reprocessamento sem nova chamada ao modelo, além de comparação de desempenho entre versões do prompt.
+
+Etapa 4 — Interface de Consulta
+A interface permite que o usuário selecione um conjunto de medicamentos pelo nome. O sistema cruza todas as combinações possíveis entre os medicamentos informados e apresenta, para cada par, as interações medicamentosas e contra-indicações identificadas. Combinações sem ocorrências são omitidas. Cada resultado indica a bula de origem da informação.
+
+A interface tem caráter de prova de conceito — design funcional e básico, sem recursos avançados de interação, busca contextualizada ou ferramentas de gestão.
+
+Validação
+A validação compara as saídas da pipeline com um gabarito construído manualmente: uma planilha contendo um conjunto de JSONs anotados por revisão humana. A correspondência entre bula processada e entrada no gabarito é feita pelo nome do arquivo da bula como chave.
+
+Contra-indicações e interações medicamentosas são avaliadas de forma independente.
+
+Normalização de texto (aplicada antes de qualquer comparação):
+
+Conversão de todos os caracteres para minúsculas
+Remoção de acentos e caracteres diacríticos
+Substituição de qualquer caractere que não seja letra, número ou espaço por espaço
+Remoção de espaços duplicados
+Remoção de espaços no início e no fim
+Similaridade entre entidades: índice de Jaccard aplicado aos conjuntos de palavras de cada campo após normalização.
+
+Para contra-indicações, o score é o Jaccard direto sobre o campo texto:
+
+s_CI = J(texto_extraído, texto_gabarito)
+
+Para interações medicamentosas:
+
+s_IN = 0,65 × J(substancia_e, substancia_r) + 0,35 × J(efeito_e, efeito_r)
+
+Para cada entidade extraída, o score é calculado em relação a todas as entidades do gabarito da mesma categoria naquela bula. A entidade do gabarito com maior score é considerada a melhor correspondência. Não há restrição de exclusividade.
+
+Limiares de correspondência:
+
+Contra-indicações: 0,45 (LLM tende a parafrasear, reduzindo sobreposição de tokens)
+Interações: 0,40 (campo substância costuma ser curto, tornando o índice menos estável)
+Métricas:
+
+Precisão: proporção das entidades extraídas que encontraram correspondência no gabarito
+Revocação: proporção das entidades do gabarito capturadas pela extração
+Métrica principal: F2-score — penaliza revocação baixa duas vezes mais que precisão baixa
+F2 = 5 × (P × R) / (4P + R)
+
+Métricas globais: calculadas por micro-média (somando contadores de todas as bulas antes do cálculo).
+
+Metas mínimas de desempenho:
+
+Revocação ≥ 0,90 (para contra-indicações e interações)
+F2-score ≥ 0,80 (para contra-indicações e interações)
+Não foi definida meta mínima para precisão, pois falsos positivos podem ser identificados e descartados pelo profissional durante a consulta, enquanto falsos negativos representam informações que nunca chegam ao sistema.
