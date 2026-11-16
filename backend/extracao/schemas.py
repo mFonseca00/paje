@@ -4,12 +4,12 @@ from pydantic import BaseModel
 
 
 class ContraIndicacao(BaseModel):
-    ordinal: int
+    id: int
     descricao: str
 
 
 class InteracaoMedicamentosa(BaseModel):
-    ordinal: int
+    id: int
     tipo: Literal["NOME_DIRETO", "CLASSE", "ALIMENTO"]
     referencia: str
     efeito: str | None = None

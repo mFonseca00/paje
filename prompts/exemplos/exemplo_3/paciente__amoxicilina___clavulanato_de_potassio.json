@@ -1,73 +1,27 @@
 {
-  "Medicamento": "amoxicilina + clavulanato de potássio",
   "contraindicacoes": [
     {
       "id": 1,
-      "descricao": "Este medicamento é contraindicada para pacientes que apresentam reações alérgicas e hipersensibilidade às penicilinas"
+      "descricao": "Este medicamento é contraindicado para pacientes que apresentam reações alérgicas e hipersensibilidade às penicilinas."
     },
     {
       "id": 2,
-      "descricao": "Este medicamento é contraindicada para pacientes que apresentam disfunção do fígado ou icterícia (amarelamento da pele e dos olhos)  associadas ao uso de amoxicilina + clavulanato de potássio ou de outras penicilinas"
+      "descricao": "Este medicamento é contraindicado para pacientes que apresentam disfunção do fígado ou icterícia associadas ao uso de amoxicilina + clavulanato de potássio ou de outras penicilinas."
     },
     {
       "id": 3,
-      "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista"
+      "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
     }
   ],
   "interacoes": [
-    {
-      "id": 1,
-      "tipo": "NOME_DIRETO",
-      "referencia": "probenecida",
-      "efeito": null
-    },
-    {
-      "id": 2,
-      "tipo": "NOME_DIRETO",
-      "referencia": "alopurinol",
-      "efeito": null
-    },
-    {
-      "id": 3,
-      "tipo": "CLASSE",
-      "referencia": "anticoncepcionais",
-      "efeito": null
-    },
-    {
-      "id": 4,
-      "tipo": "NOME_DIRETO",
-      "referencia": "dissulfiram",
-      "efeito": null
-    },
-    {
-      "id": 5,
-      "tipo": "CLASSE",
-      "referencia": "anticoagulantes",
-      "efeito": null
-    },
-    {
-      "id": 6,
-      "tipo": "NOME_DIRETO",
-      "referencia": "acenocumarol",
-      "efeito": "risco de sangramento"
-    },
-    {
-      "id": 7,
-      "tipo": "NOME_DIRETO",
-      "referencia": "varfarina",
-      "efeito": "risco de sangramento"
-    },
-    {
-      "id": 8,
-      "tipo": "NOME_DIRETO",
-      "referencia": "micofenolato de mofetila",
-      "efeito": null
-    },
-    {
-      "id": 9,
-      "tipo": "NOME_DIRETO",
-      "referencia": "metotrexato",
-      "efeito": null
-    }
+    {"id": 1, "tipo": "NOME_DIRETO", "referencia": "probenecida", "efeito": null},
+    {"id": 2, "tipo": "NOME_DIRETO", "referencia": "alopurinol", "efeito": null},
+    {"id": 3, "tipo": "CLASSE", "referencia": "anticoncepcionais orais", "efeito": null},
+    {"id": 4, "tipo": "NOME_DIRETO", "referencia": "dissulfiram", "efeito": null},
+    {"id": 5, "tipo": "CLASSE", "referencia": "anticoagulantes", "efeito": "risco de sangramento"},
+    {"id": 6, "tipo": "NOME_DIRETO", "referencia": "acenocumarol", "efeito": "risco de sangramento"},
+    {"id": 7, "tipo": "NOME_DIRETO", "referencia": "varfarina", "efeito": "risco de sangramento"},
+    {"id": 8, "tipo": "NOME_DIRETO", "referencia": "micofenolato de mofetila", "efeito": null},
+    {"id": 9, "tipo": "NOME_DIRETO", "referencia": "metotrexato", "efeito": null}
   ]
 }

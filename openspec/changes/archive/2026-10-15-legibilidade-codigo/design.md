@@ -77,9 +77,9 @@ Adicionar `markdown_dir: str = "docs/markdown_bulas"` em `Settings`. `pipeline.p
 
 O pacote está instalado via `pip install -e .` (pyproject.toml). Os scripts já funcionam sem a manipulação de path. Remover o bloco `sys.path.insert`.
 
-### D8 — `ordinal` em `extracao/schemas.py`
+### D8 — `id` em `extracao/schemas.py`
 
-Renomear `ContraIndicacao.id` e `InteracaoMedicamentosa.id` para `ordinal` no schema de extração. Isso evita confusão com PKs do banco durante explicações.
+Renomear `ContraIndicacao.id` e `InteracaoMedicamentosa.id` para `id` no schema de extração. Isso evita confusão com PKs do banco durante explicações.
 
 ### D9 — Padronização de `config.py`
 
@@ -87,7 +87,7 @@ Renomear `ContraIndicacao.id` e `InteracaoMedicamentosa.id` para `ordinal` no sc
 
 ## Risks / Trade-offs
 
-- **D8 (renomear `id` → `ordinal`)** afeta `resposta_bruta_modelo` já gravada no banco (campo JSONB). Dados históricos conterão `"id"`, novos conterão `"ordinal"`. Risco baixo: o campo é auditoria, não lido pela aplicação. Mitigação: documentar na task.
+- **D8 (renomear `id` → `id`)** afeta `resposta_bruta_modelo` já gravada no banco (campo JSONB). Dados históricos conterão `"id"`, novos conterão `"id"`. Risco baixo: o campo é auditoria, não lido pela aplicação. Mitigação: documentar na task.
 
 - **D4 (lazy agente)** usa variável global mutável. Não é thread-safe. Aceitável: o projeto roda em modo síncrono com um processo. Mitigação: comentário explicando a limitação.
 

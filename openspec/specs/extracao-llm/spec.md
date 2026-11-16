@@ -12,7 +12,7 @@ Cada interação SHALL ser classificada como `NOME_DIRETO` (substância específ
 
 #### Scenario: Extração bem-sucedida com interações mistas
 - **WHEN** o modelo recebe o texto das seções relevantes e os exemplos few-shot
-- **THEN** retorna JSON válido com listas de contra-indicações e interações; cada item contém `id` (ordinal dentro da resposta); cada interação contém `tipo` (`NOME_DIRETO`, `CLASSE` ou `ALIMENTO`), `referencia` (NOT NULL) e `efeito` (nullable)
+- **THEN** retorna JSON válido com listas de contra-indicações e interações; cada item contém `id` (id dentro da resposta); cada interação contém `tipo` (`NOME_DIRETO`, `CLASSE` ou `ALIMENTO`), `referencia` (NOT NULL) e `efeito` (nullable)
 
 #### Scenario: Modelo retorna JSON inválido ou malformado
 - **WHEN** a resposta do modelo não está em JSON válido
@@ -35,7 +35,7 @@ O sistema SHALL garantir que a saída do LLM para cada bula siga o esquema JSON 
 }
 ```
 
-O campo `id` é ordinal dentro da resposta do modelo (1, 2, 3…) e não se relaciona com o ID gerado pelo banco ao inserir os registros.
+O campo `id` é id dentro da resposta do modelo (1, 2, 3…) e não se relaciona com o ID gerado pelo banco ao inserir os registros.
 
 #### Scenario: Saída segue o esquema definido
 - **WHEN** o modelo retorna o JSON

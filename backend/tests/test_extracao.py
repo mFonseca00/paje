@@ -17,15 +17,15 @@ from backend.extracao.schemas import ContraIndicacao, ExtracacaoClinica, Interac
 def extracao_simples() -> ExtracacaoClinica:
     return ExtracacaoClinica(
         contraindicacoes=[
-            ContraIndicacao(ordinal=1, descricao="Alergia a penicilinas"),
-            ContraIndicacao(ordinal=2, descricao="Mononucleose infecciosa"),
+            ContraIndicacao(id=1, descricao="Alergia a penicilinas"),
+            ContraIndicacao(id=2, descricao="Mononucleose infecciosa"),
         ],
         interacoes=[
-            InteracaoMedicamentosa(ordinal=1, tipo="NOME_DIRETO", referencia="probenecida",
+            InteracaoMedicamentosa(id=1, tipo="NOME_DIRETO", referencia="probenecida",
                                    efeito="retarda excreção renal"),
-            InteracaoMedicamentosa(ordinal=2, tipo="CLASSE", referencia="anticoagulantes cumarínicos",
+            InteracaoMedicamentosa(id=2, tipo="CLASSE", referencia="anticoagulantes cumarínicos",
                                    efeito="prolonga tempo de protrombina"),
-            InteracaoMedicamentosa(ordinal=3, tipo="ALIMENTO", referencia="bebidas alcoólicas",
+            InteracaoMedicamentosa(id=3, tipo="ALIMENTO", referencia="bebidas alcoólicas",
                                    efeito=None),
         ],
     )
@@ -98,23 +98,23 @@ def arquivo_bruto_tmp(tmp_path, markdown_bruto_exemplo) -> Path:
 
 class TestSchemas:
     def test_contraindicacao_valida(self):
-        ci = ContraIndicacao(ordinal=1, descricao="Alergia a penicilinas")
-        assert ci.ordinal == 1
+        ci = ContraIndicacao(id=1, descricao="Alergia a penicilinas")
+        assert ci.id == 1
         assert ci.descricao == "Alergia a penicilinas"
 
     def test_interacao_nome_direto(self):
-        i = InteracaoMedicamentosa(ordinal=1, tipo="NOME_DIRETO", referencia="varfarina",
+        i = InteracaoMedicamentosa(id=1, tipo="NOME_DIRETO", referencia="varfarina",
                                    efeito="aumenta risco de sangramento")
         assert i.tipo == "NOME_DIRETO"
         assert i.efeito == "aumenta risco de sangramento"
 
     def test_interacao_efeito_nullable(self):
-        i = InteracaoMedicamentosa(ordinal=1, tipo="ALIMENTO", referencia="leite", efeito=None)
+        i = InteracaoMedicamentosa(id=1, tipo="ALIMENTO", referencia="leite", efeito=None)
         assert i.efeito is None
 
     def test_interacao_tipo_invalido(self):
         with pytest.raises(Exception):
-            InteracaoMedicamentosa(ordinal=1, tipo="INVALIDO", referencia="x")
+            InteracaoMedicamentosa(id=1, tipo="INVALIDO", referencia="x")
 
     def test_extracao_clinica_completa(self, extracao_simples):
         assert len(extracao_simples.contraindicacoes) == 2

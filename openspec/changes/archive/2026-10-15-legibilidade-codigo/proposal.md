@@ -11,7 +11,7 @@ O projeto Pajé será apresentado ao avaliador do TCC com o código-fonte aberto
 - Mover `_MARKDOWN_DIR` de hardcoded em `pipeline.py` para `settings` em `config.py`
 - Padronizar gestão de sessão de banco com context manager (`with SessionLocal() as session`)
 - Remover `sys.path.insert` dos scripts em `backend/scripts/` (redundante dado `pyproject.toml`)
-- Renomear `id` ordinal em `extracao/schemas.py` para `ordinal` para distinguir de PKs do banco
+- Renomear `id` id em `extracao/schemas.py` para `id` para distinguir de PKs do banco
 - Padronizar declarações de campo em `config.py` (remover `Field()` redundante)
 
 ## Capabilities

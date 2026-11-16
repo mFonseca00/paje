@@ -8,12 +8,12 @@
 - [x] 1.3 Em `backend/aquisicao/referencia.py`: remover definição local de `_normalizar` e importar de `backend.utils.texto`
 - [x] 1.4 Verificar que `carregar_nomes_rename()` e `carregar_nomes_comerciais()` retornam os mesmos valores de antes
 
-## 2. Renomear `id` → `ordinal` nos schemas de extração (D8)
+## 2. Renomear `id` → `id` nos schemas de extração (D8)
 
-- [x] 2.1 Em `backend/extracao/schemas.py`: renomear campo `id` para `ordinal` em `ContraIndicacao` e `InteracaoMedicamentosa`
+- [x] 2.1 Em `backend/extracao/schemas.py`: renomear campo `id` para `id` em `ContraIndicacao` e `InteracaoMedicamentosa`
 - [x] 2.2 Em `backend/extracao/pipeline.py`: ajustar qualquer referência a `.id` dos schemas de extração (se existir)
-- [x] 2.3 Em `prompts/extracao_v1.md`: atualizar exemplos JSON que referenciam o campo `id` ordinal para usar `ordinal`
-- [x] 2.4 Rodar extração em amostra de 1 bula e confirmar output JSON usa `ordinal`
+- [x] 2.3 Em `prompts/extracao_v1.md`: atualizar exemplos JSON que referenciam o campo `id` id para usar `id`
+- [x] 2.4 Rodar extração em amostra de 1 bula e confirmar output JSON usa `id`
 
 ## 3. Repositório SQLAlchemy 2.x (D3)
 

@@ -1,5 +1,4 @@
 {
-  "Medicamento": "amoxicilina",
   "contraindicacoes": [
     {
       "id": 1,
@@ -15,29 +14,9 @@
     }
   ],
   "interacoes": [
-    {
-      "id": 1,
-      "tipo": "NOME_DIRETO",
-      "referencia": "probenecida",
-      "efeito": null
-    },
-    {
-      "id": 2,
-      "tipo": "NOME_DIRETO",
-      "referencia": "alopurinol",
-      "efeito": null
-    },
-    {
-      "id": 3,
-      "tipo": "CLASSE",
-      "referencia": "antibióticos",
-      "efeito": null
-    },
-    {
-      "id": 4,
-      "tipo": "CLASSE",
-      "referencia": "pílulas anticoncepcionais",
-      "efeito": null
-    }
+    {"id": 1, "tipo": "NOME_DIRETO", "referencia": "probenecida", "efeito": null},
+    {"id": 2, "tipo": "NOME_DIRETO", "referencia": "alopurinol", "efeito": null},
+    {"id": 3, "tipo": "CLASSE", "referencia": "antibióticos", "efeito": null},
+    {"id": 4, "tipo": "CLASSE", "referencia": "pílulas anticoncepcionais", "efeito": null}
   ]
 }

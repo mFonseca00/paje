@@ -1,9 +1,8 @@
 {
-  "Medicamento": "azitromicina",
   "contraindicacoes": [
     {
       "id": 1,
-      "descricao": "Não deve ser utilizado se há histórico de hipersensibilidade (reações alérgicas) à azitromicina, eritromicina, a  qualquer antibiótico macrolídeo, cetolídeo ou a qualquer componente da fórmula do próprio medicamento."
+      "descricao": "Não deve ser utilizado se há histórico de hipersensibilidade (reações alérgicas) à azitromicina, eritromicina, a qualquer antibiótico macrolídeo, cetolídeo ou a qualquer componente da fórmula do próprio medicamento."
     },
     {
       "id": 2,
@@ -23,53 +22,13 @@
     }
   ],
   "interacoes": [
-    {
-      "id": 1,
-      "tipo": "CLASSE",
-      "referencia": "antiácidos",
-      "efeito": null
-    },
-    {
-      "id": 2,
-      "tipo": "CLASSE",
-      "referencia": "ergô",
-      "efeito": null
-    },
-    {
-      "id": 3,
-      "tipo": "CLASSE",
-      "referencia": "derivados do ergô",
-      "efeito": null
-    },
-    {
-      "id": 4,
-      "tipo": "NOME_DIRETO",
-      "referencia": "digoxina",
-      "efeito": null
-    },
-    {
-      "id": 5,
-      "tipo": "NOME_DIRETO",
-      "referencia": "colchicina",
-      "efeito": null
-    },
-    {
-      "id": 6,
-      "tipo": "NOME_DIRETO",
-      "referencia": "zidovudina",
-      "efeito": null
-    },
-    {
-      "id": 7,
-      "tipo": "CLASSE",
-      "referencia": "anticoagulantes orais do tipo cumarínicos",
-      "efeito": null
-    },
-    {
-      "id": 8,
-      "tipo": "NOME_DIRETO",
-      "referencia": "ciclosporina",
-      "efeito": null
-    }
+    {"id": 1, "tipo": "CLASSE", "referencia": "antiácidos", "efeito": null},
+    {"id": 2, "tipo": "CLASSE", "referencia": "ergô", "efeito": null},
+    {"id": 3, "tipo": "CLASSE", "referencia": "derivados do ergô", "efeito": null},
+    {"id": 4, "tipo": "NOME_DIRETO", "referencia": "digoxina", "efeito": null},
+    {"id": 5, "tipo": "NOME_DIRETO", "referencia": "colchicina", "efeito": null},
+    {"id": 6, "tipo": "NOME_DIRETO", "referencia": "zidovudina", "efeito": null},
+    {"id": 7, "tipo": "CLASSE", "referencia": "anticoagulantes orais do tipo cumarínicos", "efeito": null},
+    {"id": 8, "tipo": "NOME_DIRETO", "referencia": "ciclosporina", "efeito": null}
   ]
 }

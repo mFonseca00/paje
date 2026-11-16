@@ -48,7 +48,7 @@ class ExtracacaoClinica(BaseModel):
     interacoes: list[InteracaoMedicamentosa]
 ```
 
-**Rationale**: Etapa única de extração; a classificação farmacológica por LLM foi movida para pós-TCC (D9). O campo `id` é ordinal dentro da resposta do modelo — facilita correlação entre o JSONB bruto armazenado em `bulas` e os registros inseridos no banco, sem se confundir com o ID gerado pelo banco. `descricao` foi preferido a `texto` por ser mais expressivo no contexto clínico. `efeito` é nullable porque nem toda interação vem acompanhada de descrição do efeito na bula. O tipo `ALIMENTO` foi adicionado para cobrir interações com alimentos e bebidas (ex: alendronato vs café, suco), que aparecem em bulas da RENAME e têm relevância clínica distinta das interações medicamentosas.
+**Rationale**: Etapa única de extração; a classificação farmacológica por LLM foi movida para pós-TCC (D9). O campo `id` é id dentro da resposta do modelo — facilita correlação entre o JSONB bruto armazenado em `bulas` e os registros inseridos no banco, sem se confundir com o ID gerado pelo banco. `descricao` foi preferido a `texto` por ser mais expressivo no contexto clínico. `efeito` é nullable porque nem toda interação vem acompanhada de descrição do efeito na bula. O tipo `ALIMENTO` foi adicionado para cobrir interações com alimentos e bebidas (ex: alendronato vs café, suco), que aparecem em bulas da RENAME e têm relevância clínica distinta das interações medicamentosas.
 
 ---
 

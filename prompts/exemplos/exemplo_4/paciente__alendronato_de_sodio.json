@@ -1,73 +1,37 @@
 {
-  "Medicamento": "alendronato de sódio",
   "contraindicacoes": [
     {
       "id": 1,
-      "descricao": "Este medicamento é contraindicada para o paciente que apresentar algum distúrbio do esôfago"
+      "descricao": "Este medicamento é contraindicado para o paciente que apresentar algum distúrbio do esôfago."
     },
     {
       "id": 2,
-      "descricao": "Este medicamento é contraindicada caso o paciente não consiga permanecer em pé ou na posição sentada durante, pelo menos, 30 minutos"
+      "descricao": "Este medicamento é contraindicado caso o paciente não consiga permanecer em pé ou na posição sentada durante, pelo menos, 30 minutos."
     },
     {
       "id": 3,
-      "descricao": "Este medicamento é contraindicada para pacientes que apresentam hipersensibilidade a alendronato de sódio tri-hidratado, celulose microcristalina, lactose, croscarmelose sódica e estearato de magnésio"
+      "descricao": "Este medicamento é contraindicado para pacientes que apresentam hipersensibilidade a alendronato de sódio tri-hidratado, celulose microcristalina, lactose, croscarmelose sódica e estearato de magnésio."
     },
     {
       "id": 4,
-      "descricao": "Este medicamento é contraindicada caso o paciente apresente deficiência de cálcio no sangue"
+      "descricao": "Este medicamento é contraindicado caso o paciente apresente deficiência de cálcio no sangue."
     },
     {
       "id": 5,
-      "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião dentista"
+      "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião dentista."
     },
     {
       "id": 6,
-      "descricao": "Este medicamento é contrindicado para uso de crianças"
+      "descricao": "Este medicamento é contraindicado para uso em crianças."
     }
   ],
   "interacoes": [
-    {
-      "id": 1,
-      "tipo": "ALIMENTO",
-      "referencia": "água mineral",
-      "efeito": "potencial de irritação do esôfago"
-    },
-    {
-      "id": 2,
-      "tipo": "ALIMENTO",
-      "referencia": "café",
-      "efeito": "potencial de irritação do esôfago"
-    },
-    {
-      "id": 3,
-      "tipo": "ALIMENTO",
-      "referencia": "chá",
-      "efeito": "potencial de irritação do esôfago"
-    },
-    {
-      "id": 4,
-      "tipo": "ALIMENTO",
-      "referencia": "suco",
-      "efeito": "potencial de irritação do esôfago"
-    },
-    {
-      "id": 5,
-      "tipo": "CLASSE",
-      "referencia": "antiácidos",
-      "efeito": null
-    },
-    {
-      "id": 6,
-      "tipo": "CLASSE",
-      "referencia": "suplementos de cálcio",
-      "efeito": null
-    },
-    {
-      "id": 7,
-      "tipo": "CLASSE",
-      "referencia": "vitaminas",
-      "efeito": null
-    }
+    {"id": 1, "tipo": "ALIMENTO", "referencia": "água mineral", "efeito": "potencial de irritação do esôfago"},
+    {"id": 2, "tipo": "ALIMENTO", "referencia": "café", "efeito": "potencial de irritação do esôfago"},
+    {"id": 3, "tipo": "ALIMENTO", "referencia": "chá", "efeito": "potencial de irritação do esôfago"},
+    {"id": 4, "tipo": "ALIMENTO", "referencia": "suco", "efeito": "potencial de irritação do esôfago"},
+    {"id": 5, "tipo": "CLASSE", "referencia": "antiácidos", "efeito": null},
+    {"id": 6, "tipo": "CLASSE", "referencia": "suplementos de cálcio", "efeito": null},
+    {"id": 7, "tipo": "CLASSE", "referencia": "vitaminas", "efeito": null}
   ]
 }

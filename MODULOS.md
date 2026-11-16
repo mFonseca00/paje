@@ -207,11 +207,11 @@ Extrai as **seções 3 e 4** do template de bula paciente da ANVISA:
 
 ```python
 class ContraIndicacao(BaseModel):
-    ordinal: int
+    id: int
     descricao: str
 
 class InteracaoMedicamentosa(BaseModel):
-    ordinal: int
+    id: int
     tipo: Literal["NOME_DIRETO", "CLASSE", "ALIMENTO"]
     referencia: str
     efeito: str | None = None

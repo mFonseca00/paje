@@ -6,11 +6,11 @@ Define o módulo de avaliação da qualidade das extrações da pipeline, compar
 
 ### Requirement: Comparação com gabarito manual
 
-O sistema SHALL comparar as entidades extraídas pela etapa de extração clínica com um gabarito construído manualmente (JSONs anotados por revisão humana), usando o nome do arquivo da bula como chave de correspondência.
+O sistema SHALL comparar as entidades extraídas pela etapa de extração clínica com um gabarito construído manualmente, usando o nome do arquivo PDF como chave de correspondência.
 
 #### Scenario: Bula encontrada no gabarito
 - **WHEN** o sistema avalia uma bula processada
-- **THEN** as entidades extraídas são comparadas com as entidades do gabarito correspondentes à mesma chave (nome do arquivo)
+- **THEN** as entidades extraídas são comparadas com as entidades do gabarito correspondentes ao mesmo nome de arquivo
 
 #### Scenario: Bula não encontrada no gabarito
 - **WHEN** o nome do arquivo da bula não consta no gabarito
@@ -48,11 +48,11 @@ Quando `efeito` for nulo em qualquer um dos lados da comparação, o score de in
 
 ### Requirement: Correspondência por melhor score sem exclusividade
 
-O sistema SHALL, para cada entidade extraída, identificar a entidade do gabarito com maior score como melhor correspondência, sem restrição de exclusividade entre entidades.
+O sistema SHALL, para cada entidade do gabarito, identificar a entidade extraída com maior score como melhor correspondência, sem restrição de exclusividade entre entidades.
 
 #### Scenario: Entidade extraída encontra correspondência no gabarito
 - **WHEN** o score da melhor correspondência é maior ou igual ao limiar configurado
-- **THEN** a entidade é considerada verdadeiro positivo
+- **THEN** a entidade do gabarito é considerada verdadeiro positivo
 
 #### Scenario: Entidade extraída não encontra correspondência adequada
 - **WHEN** nenhuma entidade do gabarito atinge o score mínimo (0,45 para contra-indicações, 0,40 para interações)
@@ -92,10 +92,54 @@ O sistema SHALL indicar claramente no relatório de avaliação se as metas mín
 - **WHEN** revocação < 0,90 ou F2-score < 0,80 para alguma categoria
 - **THEN** o relatório indica falha na categoria, com os valores obtidos exibidos
 
-### Requirement: Tabela de referência do gabarito
+### Requirement: Gabarito em planilha XLSX com JSON esperado
 
-O sistema SHALL manter uma tabela de referência (gabarito) em formato estruturado que permita adicionar, consultar e atualizar as anotações manuais usadas na avaliação. O formato espelha o schema da etapa única de extração: cada contra-indicação tem o campo `descricao`; cada interação tem os campos `tipo` (`NOME_DIRETO`, `CLASSE` ou `ALIMENTO`), `referencia` e `efeito` (nullable).
+O sistema SHALL ler o gabarito de uma planilha XLSX (`docs/validacao/planilha.xlsx`) com as colunas `arquivo` e `json_esperado`. A coluna `arquivo` contém o nome do arquivo PDF (sem caminho). A coluna `json_esperado` contém uma string JSON com a saída esperada da extração, seguindo o mesmo schema Pydantic da etapa de extração: lista de `contraindicacoes` (campo `descricao`) e lista de `interacoes` (campos `tipo`, `referencia` e `efeito` nullable).
 
 #### Scenario: Gabarito carregado para avaliação
 - **WHEN** o processo de validação é iniciado
-- **THEN** o sistema carrega a tabela de referência e a usa como fonte de verdade para comparação
+- **THEN** o sistema carrega a planilha, parseia o campo `json_esperado` de cada linha e usa as entidades resultantes como fonte de verdade para comparação
+
+#### Scenario: JSON inválido em linha do gabarito
+- **WHEN** o campo `json_esperado` de uma linha não é JSON válido
+- **THEN** o sistema reporta o erro com o nome do arquivo e a linha, e exclui essa bula do cálculo
+
+### Requirement: Pasta isolada para PDFs de validação
+
+O sistema SHALL processar os PDFs de validação a partir de `docs/validacao/pdfs/`. Esta pasta é preenchida manualmente e não é escrita pelo pipeline de aquisição.
+
+#### Scenario: PDF de validação localizado
+- **WHEN** o script de validação é executado
+- **THEN** processa todos os PDFs presentes em `data/validacao/pdfs/` cujos nomes constam na planilha de gabarito
+
+#### Scenario: PDF presente na planilha mas ausente na pasta
+- **WHEN** o nome do arquivo consta no gabarito mas o PDF não está em `docs/validacao/pdfs/`
+- **THEN** o sistema reporta a ausência e exclui essa bula do cálculo
+
+### Requirement: Output versionado por execução
+
+O sistema SHALL gravar os resultados de cada execução em `docs/validacao/resultados/{data}_{prompt_versao}_{modelo}/`, onde `data` é a data/hora local no formato `YYYY-MM-DDTHH-MM-SS`, `prompt_versao` é o valor de `settings.prompt_version` e `modelo` é o identificador do modelo LLM utilizado. Dentro dessa pasta, SHALL existir um arquivo JSON por bula avaliada e um arquivo `relatorio.json` com as métricas agregadas e a metadata da execução.
+
+#### Scenario: Resultado por bula gravado
+- **WHEN** o script de validação conclui a avaliação de uma bula
+- **THEN** grava `{nome_arquivo}.json` na pasta da execução com os campos: `arquivo`, `contraindicacoes` (tp, fp, fn, matches com gabarito, extraida, score e classificacao) e `interacoes` (mesma estrutura)
+
+#### Scenario: Relatório geral gravado
+- **WHEN** o script de validação conclui todas as bulas
+- **THEN** grava `relatorio.json` na pasta da execução contendo: `execucao` (data, prompt_versao, modelo), `total_bulas`, métricas de `contraindicacoes` (precisao, revocacao, f2, aprovado, tp, fp, fn), métricas de `interacoes` (mesma estrutura) e `aprovado_geral`
+
+#### Scenario: Execuções anteriores preservadas
+- **WHEN** o script de validação é executado mais de uma vez
+- **THEN** cada execução cria uma pasta separada sem sobrescrever resultados anteriores
+
+### Requirement: Extração usando as mesmas funções do pipeline de produção
+
+O sistema de validação SHALL reutilizar diretamente as funções internas do pipeline de extração (`extrair_bula`, `converter_pdf_para_markdown`, `extrair_secoes_relevantes`) sem duplicar lógica. Não SHALL gravar resultados no banco de dados de produção.
+
+#### Scenario: Mudança no prompt refletida na validação
+- **WHEN** o prompt de extração é alterado
+- **THEN** a próxima execução do script de validação usa automaticamente o novo prompt, sem nenhuma alteração no código de validação
+
+#### Scenario: Mudança no pré-processamento refletida na validação
+- **WHEN** a lógica de conversão PDF→markdown ou extração de seções é alterada
+- **THEN** a próxima execução do script de validação usa automaticamente o novo pré-processamento

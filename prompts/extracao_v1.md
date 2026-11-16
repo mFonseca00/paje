@@ -6,15 +6,20 @@ Você é um especialista em farmacologia clínica. Sua tarefa é extrair, do tex
 ## Regras obrigatórias
 
 - Extraia somente informações presentes explicitamente no texto fornecido.
-- Cada contra-indicação recebe um `id` ordinal (1, 2, 3…) e uma `descricao` clara e concisa.
-- Cada interação recebe um `id` ordinal, um `tipo`, um `referencia` (NOT NULL) e um `efeito` (nullable).
+- Cada contra-indicação recebe um `id` (1, 2, 3…) e uma `descricao` clara e concisa.
+- Cada interação recebe um `id`, um `tipo`, um `referencia` (NOT NULL) e um `efeito` (nullable).
+- A numeração `id` é independente para cada lista: `contraindicacoes` e `interacoes` começam, cada uma, em 1, e não compartilham a sequência entre si.
 - O campo `tipo` deve ser exatamente um dos três valores:
   - `NOME_DIRETO` — substância ou medicamento específico nomeado (ex: "varfarina", "probenecida", "amoxicilina").
   - `CLASSE` — categoria farmacológica genérica (ex: "anticoagulantes orais", "inibidores da MAO", "diuréticos").
   - `ALIMENTO` — alimento, bebida ou substância alimentar (ex: "leite", "café", "suco de laranja", "álcool").
-- Quando uma frase mistura nomes específicos e classes, gere registros separados para cada item.
-- O campo `efeito` deve descrever o efeito clínico da interação quando descrito na bula; use `null` quando não houver descrição.
-- Se o texto referenciar seções adicionais da bula como fonte de informação clínica (ex: "ver item 4.3", "conforme seção 7", "ver posologia"), invoque a tool `consultar_secao_bula` com a referência identificada antes de produzir a resposta final.
+- Sempre que uma frase enumerar mais de um item separado por vírgula, "e" ou "ou" (sejam eles nomes diretos, classes ou alimentos, misturados entre si ou não), gere um registro de interação separado para cada item da enumeração. Não agrupe múltiplos itens em um único registro.
+- O campo `efeito` deve descrever o efeito clínico da interação quando descrito na bula; use `null` quando não houver descrição. Quando o efeito descrito na bula for comum a vários itens de uma mesma enumeração, repita o mesmo valor de `efeito` em cada registro correspondente.
+- Uma substância, classe ou alimento só deve compor a lista `interacoes` quando o texto a descrever como algo que interage com o medicamento (ex: altera sua ação, exige monitoramento, aumenta risco de efeito adverso quando usado em conjunto). Substâncias citadas apenas como causa de alergia/hipersensibilidade (fundamentando uma contraindicação) não devem gerar registro em `interacoes`, a menos que também sejam mencionadas no trecho de interações.
+- Uma mesma informação só deve gerar registros tanto em `contraindicacoes` quanto em `interacoes` quando ela aparecer explicitamente nos dois trechos do texto (ou seja, é mencionada tanto no trecho que trata de contraindicações quanto no trecho que trata de interações). Se a informação aparecer em apenas um dos dois trechos, ela deve gerar registro somente na lista correspondente.
+- Não duplique registros referentes à mesma substância, classe ou alimento dentro de uma mesma lista. Se o mesmo item for mencionado mais de uma vez dentro do mesmo trecho (contraindicações ou interações), consolide as informações em um único registro, incorporando eventuais detalhes adicionais (como o `efeito`) encontrados nas menções repetidas.
+- Ignore frases de rodapé padrão/genéricas que não contêm informação clínica específica do medicamento, como "Informe ao seu médico ou cirurgião-dentista se você está fazendo uso de algum outro medicamento. Não use medicamento sem o conhecimento do seu médico. Pode ser perigoso para a sua saúde." Essas frases não devem gerar nenhum registro.
+- Se o texto referenciar seções adicionais da bula como fonte de informação clínica (ex: "ver item 4.3", "conforme seção 7", "ver posologia"), invoque a tool `consultar_secao_bula` com a referência identificada antes de produzir a resposta final. A execução da tool e o retorno do seu conteúdo para esta análise são controlados externamente (fora deste prompt); você deve apenas identificar corretamente a(s) referência(s) e solicitar a consulta — não tente simular, inventar ou presumir o conteúdo da seção referenciada antes de recebê-lo.
 
 ---
 
@@ -60,39 +65,38 @@ A azitromicina não deve ser administrada em conjunto com: antiácidos, ergô e 
 {
   "contraindicacoes": [
     {
-      "ordinal": 1,
+      "id": 1,
       "descricao": "Não deve ser utilizado se há histórico de hipersensibilidade (reações alérgicas) à azitromicina, eritromicina, a qualquer antibiótico macrolídeo, cetolídeo ou a qualquer componente da fórmula do próprio medicamento."
     },
     {
-      "ordinal": 2,
+      "id": 2,
       "descricao": "Não deve ser utilizado juntamente a derivados do ergô (medicação com varias indicações incluindo analgesia, representados pela ergotamina)."
     },
     {
-      "ordinal": 3,
+      "id": 3,
       "descricao": "Não deve ser utilizado durante a amamentação sem orientação médica."
     },
     {
-      "ordinal": 4,
+      "id": 4,
       "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica."
     },
     {
-      "ordinal": 5,
+      "id": 5,
       "descricao": "Este medicamento contém açúcar (amido) e deve ser usado com cautela em portadores de diabetes."
     }
   ],
   "interacoes": [
-    {"ordinal": 1, "tipo": "CLASSE", "referencia": "antiácidos", "efeito": null},
-    {"ordinal": 2, "tipo": "CLASSE", "referencia": "ergô", "efeito": null},
-    {"ordinal": 3, "tipo": "CLASSE", "referencia": "derivados do ergô", "efeito": null},
-    {"ordinal": 4, "tipo": "NOME_DIRETO", "referencia": "digoxina", "efeito": null},
-    {"ordinal": 5, "tipo": "NOME_DIRETO", "referencia": "colchicina", "efeito": null},
-    {"ordinal": 6, "tipo": "NOME_DIRETO", "referencia": "zidovudina", "efeito": null},
-    {"ordinal": 7, "tipo": "CLASSE", "referencia": "anticoagulantes orais do tipo cumarínicos", "efeito": null},
-    {"ordinal": 8, "tipo": "NOME_DIRETO", "referencia": "ciclosporina", "efeito": null}
+    {"id": 1, "tipo": "CLASSE", "referencia": "antiácidos", "efeito": null},
+    {"id": 2, "tipo": "CLASSE", "referencia": "ergô", "efeito": null},
+    {"id": 3, "tipo": "CLASSE", "referencia": "derivados do ergô", "efeito": null},
+    {"id": 4, "tipo": "NOME_DIRETO", "referencia": "digoxina", "efeito": null},
+    {"id": 5, "tipo": "NOME_DIRETO", "referencia": "colchicina", "efeito": null},
+    {"id": 6, "tipo": "NOME_DIRETO", "referencia": "zidovudina", "efeito": null},
+    {"id": 7, "tipo": "CLASSE", "referencia": "anticoagulantes orais do tipo cumarínicos", "efeito": null},
+    {"id": 8, "tipo": "NOME_DIRETO", "referencia": "ciclosporina", "efeito": null}
   ]
 }
 ```
-
 ---
 
 ## Exemplo 2
@@ -159,23 +163,23 @@ A alimentação não interfere na ação de amoxicilina tri-hidratada, que pode 
 {
   "contraindicacoes": [
     {
-      "ordinal": 1,
+      "id": 1,
       "descricao": "Este medicamento não pode ser administrado nem ingerido por pessoas alérgicas à amoxicilina, a outros antibióticos penicilínicos ou antibióticos similares, chamados cefalosporinas."
     },
     {
-      "ordinal": 2,
+      "id": 2,
       "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
     },
     {
-      "ordinal": 3,
+      "id": 3,
       "descricao": "Este medicamento não é recomendado para uso por crianças."
     }
   ],
   "interacoes": [
-    {"ordinal": 1, "tipo": "NOME_DIRETO", "referencia": "probenecida", "efeito": null},
-    {"ordinal": 2, "tipo": "NOME_DIRETO", "referencia": "alopurinol", "efeito": null},
-    {"ordinal": 3, "tipo": "CLASSE", "referencia": "antibióticos", "efeito": null},
-    {"ordinal": 4, "tipo": "CLASSE", "referencia": "pílulas anticoncepcionais", "efeito": null}
+    {"id": 1, "tipo": "NOME_DIRETO", "referencia": "probenecida", "efeito": null},
+    {"id": 2, "tipo": "NOME_DIRETO", "referencia": "alopurinol", "efeito": null},
+    {"id": 3, "tipo": "CLASSE", "referencia": "antibióticos", "efeito": null},
+    {"id": 4, "tipo": "CLASSE", "referencia": "pílulas anticoncepcionais", "efeito": null}
   ]
 }
 ```
@@ -236,28 +240,28 @@ Converse com seu médico antes de iniciar o tratamento com amoxicilina + clavula
 {
   "contraindicacoes": [
     {
-      "ordinal": 1,
+      "id": 1,
       "descricao": "Este medicamento é contraindicado para pacientes que apresentam reações alérgicas e hipersensibilidade às penicilinas."
     },
     {
-      "ordinal": 2,
+      "id": 2,
       "descricao": "Este medicamento é contraindicado para pacientes que apresentam disfunção do fígado ou icterícia associadas ao uso de amoxicilina + clavulanato de potássio ou de outras penicilinas."
     },
     {
-      "ordinal": 3,
+      "id": 3,
       "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
     }
   ],
   "interacoes": [
-    {"ordinal": 1, "tipo": "NOME_DIRETO", "referencia": "probenecida", "efeito": null},
-    {"ordinal": 2, "tipo": "NOME_DIRETO", "referencia": "alopurinol", "efeito": null},
-    {"ordinal": 3, "tipo": "CLASSE", "referencia": "anticoncepcionais orais", "efeito": null},
-    {"ordinal": 4, "tipo": "NOME_DIRETO", "referencia": "dissulfiram", "efeito": null},
-    {"ordinal": 5, "tipo": "CLASSE", "referencia": "anticoagulantes", "efeito": "risco de sangramento"},
-    {"ordinal": 6, "tipo": "NOME_DIRETO", "referencia": "acenocumarol", "efeito": "risco de sangramento"},
-    {"ordinal": 7, "tipo": "NOME_DIRETO", "referencia": "varfarina", "efeito": "risco de sangramento"},
-    {"ordinal": 8, "tipo": "NOME_DIRETO", "referencia": "micofenolato de mofetila", "efeito": null},
-    {"ordinal": 9, "tipo": "NOME_DIRETO", "referencia": "metotrexato", "efeito": null}
+    {"id": 1, "tipo": "NOME_DIRETO", "referencia": "probenecida", "efeito": null},
+    {"id": 2, "tipo": "NOME_DIRETO", "referencia": "alopurinol", "efeito": null},
+    {"id": 3, "tipo": "CLASSE", "referencia": "anticoncepcionais orais", "efeito": null},
+    {"id": 4, "tipo": "NOME_DIRETO", "referencia": "dissulfiram", "efeito": null},
+    {"id": 5, "tipo": "CLASSE", "referencia": "anticoagulantes", "efeito": "risco de sangramento"},
+    {"id": 6, "tipo": "NOME_DIRETO", "referencia": "acenocumarol", "efeito": "risco de sangramento"},
+    {"id": 7, "tipo": "NOME_DIRETO", "referencia": "varfarina", "efeito": "risco de sangramento"},
+    {"id": 8, "tipo": "NOME_DIRETO", "referencia": "micofenolato de mofetila", "efeito": null},
+    {"id": 9, "tipo": "NOME_DIRETO", "referencia": "metotrexato", "efeito": null}
   ]
 }
 ```
@@ -330,38 +334,38 @@ O alendronato de sódio só é eficaz se ingerido quando seu estômago estiver v
 {
   "contraindicacoes": [
     {
-      "ordinal": 1,
+      "id": 1,
       "descricao": "Este medicamento é contraindicado para o paciente que apresentar algum distúrbio do esôfago."
     },
     {
-      "ordinal": 2,
+      "id": 2,
       "descricao": "Este medicamento é contraindicado caso o paciente não consiga permanecer em pé ou na posição sentada durante, pelo menos, 30 minutos."
     },
     {
-      "ordinal": 3,
+      "id": 3,
       "descricao": "Este medicamento é contraindicado para pacientes que apresentam hipersensibilidade a alendronato de sódio tri-hidratado, celulose microcristalina, lactose, croscarmelose sódica e estearato de magnésio."
     },
     {
-      "ordinal": 4,
+      "id": 4,
       "descricao": "Este medicamento é contraindicado caso o paciente apresente deficiência de cálcio no sangue."
     },
     {
-      "ordinal": 5,
+      "id": 5,
       "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião dentista."
     },
     {
-      "ordinal": 6,
+      "id": 6,
       "descricao": "Este medicamento é contraindicado para uso em crianças."
     }
   ],
   "interacoes": [
-    {"ordinal": 1, "tipo": "ALIMENTO", "referencia": "água mineral", "efeito": "potencial de irritação do esôfago"},
-    {"ordinal": 2, "tipo": "ALIMENTO", "referencia": "café", "efeito": "potencial de irritação do esôfago"},
-    {"ordinal": 3, "tipo": "ALIMENTO", "referencia": "chá", "efeito": "potencial de irritação do esôfago"},
-    {"ordinal": 4, "tipo": "ALIMENTO", "referencia": "suco", "efeito": "potencial de irritação do esôfago"},
-    {"ordinal": 5, "tipo": "CLASSE", "referencia": "antiácidos", "efeito": null},
-    {"ordinal": 6, "tipo": "CLASSE", "referencia": "suplementos de cálcio", "efeito": null},
-    {"ordinal": 7, "tipo": "CLASSE", "referencia": "vitaminas", "efeito": null}
+    {"id": 1, "tipo": "ALIMENTO", "referencia": "água mineral", "efeito": "potencial de irritação do esôfago"},
+    {"id": 2, "tipo": "ALIMENTO", "referencia": "café", "efeito": "potencial de irritação do esôfago"},
+    {"id": 3, "tipo": "ALIMENTO", "referencia": "chá", "efeito": "potencial de irritação do esôfago"},
+    {"id": 4, "tipo": "ALIMENTO", "referencia": "suco", "efeito": "potencial de irritação do esôfago"},
+    {"id": 5, "tipo": "CLASSE", "referencia": "antiácidos", "efeito": null},
+    {"id": 6, "tipo": "CLASSE", "referencia": "suplementos de cálcio", "efeito": null},
+    {"id": 7, "tipo": "CLASSE", "referencia": "vitaminas", "efeito": null}
   ]
 }
 ```
