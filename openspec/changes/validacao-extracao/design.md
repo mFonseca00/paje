@@ -20,7 +20,7 @@ O pipeline de extração LLM é capaz de processar bulas PDF e extrair entidades
 
 ### D1 — Formato do gabarito: planilha XLSX com JSON esperado
 
-**Decisão**: Planilha XLSX (`docs/validacao/planilha.xlsx`) com duas colunas: `arquivo` (nome do arquivo PDF, sem caminho) e `json_esperado` (string JSON com a saída esperada da extração). O JSON segue exatamente o schema Pydantic de saída da extração — lista de `contraindicacoes` (campo `descricao`) e lista de `interacoes` (campos `tipo`, `referencia`, `efeito` nullable).
+**Decisão**: Planilha XLSX (`docs/validacao/referencia_validacao.xlsx`) com duas colunas: `arquivo` (nome do arquivo PDF, sem caminho) e `json_esperado` (string JSON com a saída esperada da extração). O JSON segue exatamente o schema Pydantic de saída da extração — lista de `contraindicacoes` (campo `descricao`) e lista de `interacoes` (campos `tipo`, `referencia`, `efeito` nullable).
 
 **Rationale**: Planilha facilita preenchimento manual e análise geral. Armazenar o JSON esperado em uma coluna preserva o schema exato sem criar múltiplos arquivos. O formato XLSX permite validação visual linha a linha e pode ser incluído como apêndice no TCC. O loader parseia o campo `json_esperado` via `json.loads` para produzir a mesma estrutura que a extração retorna.
 

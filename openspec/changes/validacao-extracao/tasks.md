@@ -4,13 +4,13 @@
 
 ## 1. Gabarito
 
-- [ ] 1.1 Criar pasta `docs/validacao/pdfs/` e copiar manualmente os PDFs selecionados para validação (mínimo 10 bulas distintas)
-- [ ] 1.2 Criar `docs/validacao/planilha.xlsx` com colunas `arquivo` e `json_esperado`; preencher manualmente pelo menos 10 linhas com o JSON esperado seguindo o schema da extração — incluir exemplos de interações `NOME_DIRETO`, `CLASSE` e `ALIMENTO`, e contra-indicações variadas
+- [X] 1.1 Criar pasta `docs/validacao/pdfs/` e copiar manualmente os PDFs selecionados para validação (mínimo 10 bulas distintas)
+- [X] 1.2 Criar `docs/validacao/referencia_validacao.xlsx` com colunas `arquivo` e `json_esperado`; preencher manualmente pelo menos 10 linhas com o JSON esperado seguindo o schema da extração — incluir exemplos de interações `NOME_DIRETO`, `CLASSE` e `ALIMENTO`, e contra-indicações variadas
 
 ## 2. Script standalone de validação
 
 - [ ] 2.1 Criar `backend/scripts/executar_validacao.py` que lê os PDFs de `docs/validacao/pdfs/`, aplica `converter_pdf_para_markdown` e `extrair_secoes_relevantes`, chama `extrair_bula` e coleta as saídas sem gravar no banco
-- [ ] 2.2 Implementar loader da planilha XLSX: lê `docs/validacao/planilha.xlsx`, parseia `json_esperado` via `json.loads`, reporta erros de parse com nome do arquivo e número de linha
+- [ ] 2.2 Implementar loader da planilha XLSX: lê `docs/validacao/referencia_validacao.xlsx`, parseia `json_esperado` via `json.loads`, reporta erros de parse com nome do arquivo e número de linha
 
 ## 3. Engine de comparação
 

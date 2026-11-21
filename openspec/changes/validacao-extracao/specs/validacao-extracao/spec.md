@@ -94,7 +94,7 @@ O sistema SHALL indicar claramente no relatório de avaliação se as metas mín
 
 ### Requirement: Gabarito em planilha XLSX com JSON esperado
 
-O sistema SHALL ler o gabarito de uma planilha XLSX (`docs/validacao/planilha.xlsx`) com as colunas `arquivo` e `json_esperado`. A coluna `arquivo` contém o nome do arquivo PDF (sem caminho). A coluna `json_esperado` contém uma string JSON com a saída esperada da extração, seguindo o mesmo schema Pydantic da etapa de extração: lista de `contraindicacoes` (campo `descricao`) e lista de `interacoes` (campos `tipo`, `referencia` e `efeito` nullable).
+O sistema SHALL ler o gabarito de uma planilha XLSX (`docs/validacao/referencia_validacao.xlsx`) com as colunas `arquivo` e `json_esperado`. A coluna `arquivo` contém o nome do arquivo PDF (sem caminho). A coluna `json_esperado` contém uma string JSON com a saída esperada da extração, seguindo o mesmo schema Pydantic da etapa de extração: lista de `contraindicacoes` (campo `descricao`) e lista de `interacoes` (campos `tipo`, `referencia` e `efeito` nullable).
 
 #### Scenario: Gabarito carregado para avaliação
 - **WHEN** o processo de validação é iniciado
