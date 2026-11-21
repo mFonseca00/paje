@@ -1,0 +1,27 @@
+{
+  "execucao": {
+    "data": "2026-11-21T14:51:31",
+    "prompt_versao": "v1",
+    "modelo": "gemini-3.5-flash-lite"
+  },
+  "total_bulas": 0,
+  "contraindicacoes": {
+    "precisao": 0.0,
+    "revocacao": 0.0,
+    "f2": 0.0,
+    "aprovado": false,
+    "verdadeiro_positivo (tp)": 0,
+    "falso_positivo (fp)": 0,
+    "falso_negativo (fn)": 0
+  },
+  "interacoes": {
+    "precisao": 0.0,
+    "revocacao": 0.0,
+    "f2": 0.0,
+    "aprovado": false,
+    "verdadeiro_positivo (tp)": 0,
+    "falso_positivo (fp)": 0,
+    "falso_negativo (fn)": 0
+  },
+  "aprovado_geral": false
+}

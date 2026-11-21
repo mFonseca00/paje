@@ -1,0 +1,257 @@
+{
+  "arquivo": "paciente__prednisona.pdf",
+  "contraindicacoes": {
+    "tp": 3,
+    "fp": 0,
+    "fn": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 0.7692,
+        "gabarito": {
+          "descricao": "Contraindicado para uso por pessoa que tem infecções sistêmicas por fungos."
+        },
+        "extraida": {
+          "descricao": "Este medicamento é contraindicado para uso por pessoa que tem infecções sistêmicas por fungos."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8276,
+        "gabarito": {
+          "descricao": "Contraindicado para pessoa que já teve reações alérgicas ou alguma reação incomum à prednisona, a outros corticosteroides ou a qualquer um dos componentes da fórmula do produto."
+        },
+        "extraida": {
+          "descricao": "Este medicamento é contraindicado para uso por pessoa que já teve reações alérgicas ou alguma reação incomum à prednisona, a outros corticosteroides ou a qualquer um dos componentes da fórmula do produto."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8824,
+        "gabarito": {
+          "descricao": "Esse medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        },
+        "extraida": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        }
+      }
+    ]
+  },
+  "interacoes": {
+    "tp": 15,
+    "fp": 0,
+    "fn": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fenobarbital",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fenobarbital",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fenitoína",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fenitoína",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "rifampicina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "rifampicina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "efedrina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "efedrina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "estrogênios",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "estrogênios",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "diuréticos depletores de potássio",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "diuréticos depletores de potássio",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "glicosídeos cardíacos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "glicosídeos cardíacos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "anfotericina B",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "anfotericina B",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "anticoagulantes cumarínicos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "anticoagulantes cumarínicos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "salicilatos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "salicilatos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ácido acetilsalicílico",
+          "efeito": "aumento da incidência ou gravidade de úlcera no estômago e duodeno quando associado a anti-inflamatórios não esteroides"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ácido acetilsalicílico",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "antidiabéticos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "antidiabéticos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "hormônios do crescimento",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "hormônios do crescimento",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.9682,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "anti-inflamatórios não esteroides",
+          "efeito": "aumento da incidência ou gravidade de úlcera no estômago e duodeno"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "anti-inflamatórios não-esteroides",
+          "efeito": "aumento da incidência ou gravidade da úlcera no estômago e duodeno"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.9682,
+        "gabarito": {
+          "tipo": "ALIMENTO",
+          "referencia": "álcool",
+          "efeito": "aumento da incidência ou gravidade de úlcera no estômago e duodeno"
+        },
+        "extraida": {
+          "tipo": "ALIMENTO",
+          "referencia": "álcool",
+          "efeito": "aumento da incidência ou gravidade da úlcera no estômago e duodeno"
+        }
+      }
+    ]
+  }
+}

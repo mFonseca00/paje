@@ -1,0 +1,529 @@
+{
+  "arquivo": "paciente__ibuprofeno.pdf",
+  "contraindicacoes": {
+    "verdadeiro_positivo (tp)": 10,
+    "falso_positivo (fp)": 1,
+    "falso_negativo (fn)": 2,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Não utilize ibuprofeno se você já teve qualquer alergia ou alguma reação incomum a qualquer um dos componentes da fórmula do produto."
+        },
+        "extraida": {
+          "descricao": "Não utilize ibuprofeno se você já teve qualquer alergia ou alguma reação incomum a qualquer um dos componentes da fórmula do produto."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Não utilize ibuprofeno caso tenha apresentado alguma reação alérgica ao ácido acetilsalicílico e a outros antiinflamatórios."
+        },
+        "extraida": {
+          "descricao": "Não utilize ibuprofeno caso tenha apresentado alguma reação alérgica ao ácido acetilsalicílico e a outros antiinflamatórios."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Não utilize ibuprofeno em casos em que o ácido acetilsalicílico, iodeto e outros anti-inflamatórios não esteroides tenham induzido asma, rinite, urticária, pólipo nasal, angioedema, broncoespasmo e outros sintomas de reação alérgica ou anafilática."
+        },
+        "extraida": {
+          "descricao": "Não utilize ibuprofeno em casos em que o ácido acetilsalicílico, iodeto e outros anti-inflamatórios não esteroides tenham induzido asma, rinite, urticária, pólipo nasal, angioedema, broncoespasmo e outros sintomas de reação alérgica ou anafilática."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Este medicamento é contraindicado durante o terceiro trimestre de gravidez."
+        },
+        "extraida": {
+          "descricao": "Este medicamento é contraindicado durante o terceiro trimestre de gravidez."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Não utilizar ibuprofeno junto com bebidas alcoólicas."
+        },
+        "extraida": {
+          "descricao": "Não utilizar ibuprofeno junto com bebidas alcoólicas."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "O ibuprofeno é contraindicado a pacientes com úlcera gastroduodenal ou sangramento gastrintestinal."
+        },
+        "extraida": {
+          "descricao": "O ibuprofeno é contraindicado a pacientes com úlcera gastroduodenal ou sangramento gastrintestinal."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Este medicamento é contraindicado em caso de suspeita de dengue, pois pode aumentar o risco de sangramentos."
+        },
+        "extraida": {
+          "descricao": "Este medicamento é contraindicado em caso de suspeita de dengue, pois pode aumentar o risco de sangramentos."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Não use este medicamento caso tenha problemas no estômago."
+        },
+        "extraida": {
+          "descricao": "Não use este medicamento caso tenha problemas no estômago."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Este medicamento é contraindicado para menores de 6 meses."
+        },
+        "extraida": {
+          "descricao": "Este medicamento é contraindicado para menores de 6 meses."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.5714,
+        "gabarito": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica. Informe imediatamente seu médico em caso de suspeita de gravidez."
+        },
+        "extraida": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica."
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.2609,
+        "gabarito": {
+          "descricao": "Não tome este produto com outros medicamentos contendo ibuprofeno ou outros medicamentos para dor, exceto sob orientação médica."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.125,
+        "gabarito": {
+          "descricao": "Não utilize este produto contra a dor por mais de 10 dias ou contra a febre por mais de 3 dias, a menos que seja prescrito pelo médico. Não ultrapasse a dose recomendada."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.2609,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "Não utilizar este medicamento durante a gestação ou a amamentação, exceto sob recomendação médica."
+        }
+      }
+    ]
+  },
+  "interacoes": {
+    "verdadeiro_positivo (tp)": 27,
+    "falso_positivo (fp)": 1,
+    "falso_negativo (fn)": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ácido acetilsalicílico",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ácido acetilsalicílico",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "paracetamol",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "paracetamol",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "colchicina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "colchicina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "iodetos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "iodetos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "medicamentos fotossensibilizantes",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "medicamentos fotossensibilizantes",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "outros anti-inflamatórios não esteroides",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "outros anti-inflamatórios não esteroides",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "corticosteroides",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "corticosteroides",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "corticotrofina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "corticotrofina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "uroquinase",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "uroquinase",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "antidiabéticos orais",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "antidiabéticos orais",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "insulina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "insulina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "anti-hipertensivos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "anti-hipertensivos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "diuréticos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "diuréticos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ácido valpróico",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ácido valpróico",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "plicamicina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "plicamicina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "sais de ouro",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "sais de ouro",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ciclosporina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ciclosporina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "lítio",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "lítio",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "probenecida",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "probenecida",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.5,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "inibidores da ECA",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "inibidores da ECA (enzima conversora da angiotensina)",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "agentes anticoagulantes",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "agentes anticoagulantes",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "trombolíticos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "trombolíticos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "inibidores de agregação plaquetária",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "inibidores de agregação plaquetária",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "cardiotônicos digitálicos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "cardiotônicos digitálicos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "digoxina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "digoxina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metotrexato",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metotrexato",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "hormônios tireoidianos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "hormônios tireoidianos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.0,
+        "gabarito": null,
+        "extraida": {
+          "tipo": "ALIMENTO",
+          "referencia": "bebidas alcoólicas",
+          "efeito": null
+        }
+      }
+    ]
+  }
+}

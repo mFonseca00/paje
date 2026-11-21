@@ -370,7 +370,91 @@ alembic downgrade -1        # volta uma versão
 
 ---
 
-## 6. `backend/scripts/`
+## 6. `backend/validacao/`
+
+Módulo de validação quantitativa offline: compara a saída do pipeline com um gabarito anotado manualmente e gera métricas de precisão, revocação e F2. Roda separado do banco — processa PDFs diretamente, sem depender de registros no PostgreSQL.
+
+### 6.1 `comparador.py` — Engine de similaridade
+
+Implementa a comparação entre listas de CIs/IMs extraídas e as do gabarito usando índice de Jaccard sobre palavras normalizadas.
+
+**Normalização:** minúsculas, remoção de acentos (NFD), não-alfanuméricos substituídos por espaço.
+
+**Scores:**
+
+```python
+# Contra-indicação
+score_ci(extraida, gabarito) = J(descricao_extraida, descricao_gabarito)
+
+# Interação medicamentosa
+score_interacao(extraida, gabarito) = 0,65 × J(referencia) + 0,35 × J(efeito)
+# se efeito ausente em qualquer lado → usa só J(referencia)
+```
+
+**Limiares:**
+
+| Entidade | Limiar de TP |
+|---|---|
+| Contra-indicação (CI) | ≥ 0,45 |
+| Interação medicamentosa (IM) | ≥ 0,40 |
+
+**Matching:** para cada item do gabarito, encontra o item extraído com maior score (sem exclusividade — um item extraído pode emparelhar com múltiplos do gabarito). Itens do gabarito sem match acima do limiar → FN. Itens extraídos sem match acima do limiar → FP.
+
+**Saída:** `MatchResult(gabarito, extraida, score, classificacao)` onde `classificacao ∈ {"TP", "FP", "FN"}`.
+
+### 6.2 `gabarito.py` — Loader do XLSX
+
+Carrega `docs/validacao/referencia_validacao.xlsx`. Cada linha da planilha tem:
+- `arquivo` — nome do PDF (ex: `paciente__alendronato_de_sodio.pdf`)
+- `json_esperado` — JSON com `contraindicacoes` e `interacoes` validado pelo schema `ExtracacaoClinica`
+
+Reporta erros de JSON/schema por arquivo e linha, sem abortar o carregamento das demais entradas.
+
+**Gabarito atual:** 10 bulas da RENAME, anotadas com texto exato da bula paciente. Frases que cobrem múltiplas CIs ou IMs foram divididas em itens separados — é o comportamento esperado do pipeline.
+
+### 6.3 `runner.py` — Orquestrador
+
+**Ponto de entrada:** `executar_validacao(pdfs_dir, xlsx_path, resultados_dir) → Path`
+
+**Fluxo:**
+
+```
+docs/validacao/referencia_validacao.xlsx
+        │ carregar_gabarito()
+        ▼
+  gabarito: dict[arquivo → EntradaGabarito]
+        │
+        ▼ para cada PDF em docs/validacao/pdfs/:
+┌─────────────────────────────────────────────┐
+│  _extrair_pdf(pdf_path)                     │
+│  PDF → markdown → seções → LLM             │
+│  → ExtracacaoClinica (sem banco)            │
+└────────────────┬────────────────────────────┘
+                 │
+                 ▼
+┌─────────────────────────────────────────────┐
+│  comparar_contraindicacoes()                │
+│  comparar_interacoes()                      │
+│  → matches TP/FP/FN por entidade           │
+│  → grava {bula}.json em pasta versionada   │
+└────────────────┬────────────────────────────┘
+                 │
+                 ▼
+  acumular TP/FP/FN (micro-média)
+        │
+        ▼
+  calcular F2 e gravar relatorio.json
+```
+
+**Pasta de resultados:** `docs/validacao/resultados/{data}_{prompt_versao}_{modelo}/`
+- `relatorio.json` — métricas agregadas (CI + IM separados, aprovado_geral)
+- `{bula}.json` — matches detalhados por bula com score e classificação de cada item
+
+**Critério de aprovação:** revocação ≥ 0,90 **e** F2 ≥ 0,80, avaliados separadamente para CI e IM.
+
+---
+
+## 7. `backend/scripts/`
 
 ### `executar_pipeline.py`
 
@@ -402,6 +486,16 @@ python backend/scripts/executar_extracao.py --limite 5
 python backend/scripts/executar_extracao.py --reprocessar-erro
 ```
 
+### `executar_validacao.py`
+
+Executa o pipeline completo sobre as 10 bulas de validação, compara com o gabarito e imprime métricas no terminal. Resultados gravados em `docs/validacao/resultados/`.
+
+```bash
+python backend/scripts/executar_validacao.py
+```
+
+Não aceita flags — modelo e versão do prompt vêm do `.env` (`LLM_PROVIDER`, `LLM_MODEL`, `PROMPT_VERSION`).
+
 ### Scripts de diagnóstico
 
 | Script | Uso |
@@ -413,7 +507,7 @@ python backend/scripts/executar_extracao.py --reprocessar-erro
 
 ---
 
-## 7. `prompts/extracao_v1.md`
+## 8. `prompts/extracao_v1.md`
 
 Prompt do sistema carregado pelo agente. Técnica **few-shot**: 4 bulas reais com extrações corretas embutidas nas instruções.
 
@@ -432,7 +526,7 @@ Prompt do sistema carregado pelo agente. Técnica **few-shot**: 4 bulas reais co
 
 ---
 
-## 8. `backend/utils/texto.py`
+## 9. `backend/utils/texto.py`
 
 Função única de normalização de texto usada em todo o projeto:
 
@@ -443,11 +537,11 @@ def normalizar(texto: str) -> str:
     return " ".join(sem_acento.lower().split())
 ```
 
-Usado para: nomes de medicamentos na RENAME, nomes de fármacos nas listas A/B, e previsto para normalização nas métricas de validação.
+Usado para: nomes de medicamentos na RENAME, nomes de fármacos nas listas A/B. O módulo de validação usa sua própria normalização em `comparador.py` (mesma lógica, internalizada).
 
 ---
 
-## 9. `docker-compose.yml`
+## 10. `docker-compose.yml`
 
 PostgreSQL 16-alpine na porta **5433** (não 5432, para não conflitar com instalações locais).
 
@@ -462,15 +556,6 @@ Volume: `paje_pgdata` — persiste entre restarts.
 ---
 
 ## Pendências abertas
-
-### Validação da extração (`validacao-extracao`)
-
-Criar gabarito anotado manualmente para amostra de bulas e implementar métricas:
-- **Similaridade:** Jaccard por palavra sobre campos normalizados
-- **Score de interação:** `0,65 × J(referencia) + 0,35 × J(efeito)`
-- **Métricas:** precisão, revocação, **F2** (penaliza revocação baixa 2×)
-- **Metas mínimas:** revocação ≥ 0,90 e F2 ≥ 0,80 (CI e interações separados)
-- **Limiares de match:** 0,45 para CI, 0,40 para interações
 
 ### Interface web (`interface-web`)
 

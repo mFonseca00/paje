@@ -1,0 +1,103 @@
+{
+  "arquivo": "paciente__amoxicilina.pdf",
+  "contraindicacoes": {
+    "verdadeiro_positivo (tp)": 3,
+    "falso_positivo (fp)": 0,
+    "falso_negativo (fn)": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Este medicamento não pode ser administrado nem ingerido por pessoas alérgicas à amoxicilina, a outros antibióticos penicilínicos ou antibióticos similares, chamados cefalosporinas."
+        },
+        "extraida": {
+          "descricao": "Este medicamento não pode ser administrado nem ingerido por pessoas alérgicas à amoxicilina, a outros antibióticos penicilínicos ou antibióticos similares, chamados cefalosporinas."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        },
+        "extraida": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8462,
+        "gabarito": {
+          "descricao": "A amoxicilina tri-hidratada comprimidos não é recomendado para uso por crianças."
+        },
+        "extraida": {
+          "descricao": "A amoxicilina tri-hidratada comprimidos não é recomendada para uso por crianças."
+        }
+      }
+    ]
+  },
+  "interacoes": {
+    "verdadeiro_positivo (tp)": 4,
+    "falso_positivo (fp)": 0,
+    "falso_negativo (fn)": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "probenecida",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "probenecida",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "alopurinol",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "alopurinol",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "antibióticos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "antibióticos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "pílulas anticoncepcionais",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "pílulas anticoncepcionais",
+          "efeito": null
+        }
+      }
+    ]
+  }
+}

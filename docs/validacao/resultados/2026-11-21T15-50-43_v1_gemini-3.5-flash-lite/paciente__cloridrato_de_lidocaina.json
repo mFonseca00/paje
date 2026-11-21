@@ -1,0 +1,75 @@
+{
+  "arquivo": "paciente__cloridrato_de_lidocaina.pdf",
+  "contraindicacoes": {
+    "verdadeiro_positivo (tp)": 3,
+    "falso_positivo (fp)": 0,
+    "falso_negativo (fn)": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "A lidocaína é contraindicada em pacientes com conhecida hipersensibilidade a anestésicos locais do tipo amida ou a qualquer um dos componentes da fórmula."
+        },
+        "extraida": {
+          "descricao": "A lidocaína é contraindicada em pacientes com conhecida hipersensibilidade a anestésicos locais do tipo amida ou a qualquer um dos componentes da fórmula."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião dentista."
+        },
+        "extraida": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião dentista."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "A doação de sangue é contraindicada durante o tratamento com lidocaína, devido ao dano que ele pode causar à pessoa que receber o sangue."
+        },
+        "extraida": {
+          "descricao": "A doação de sangue é contraindicada durante o tratamento com lidocaína, devido ao dano que ele pode causar à pessoa que receber o sangue."
+        }
+      }
+    ]
+  },
+  "interacoes": {
+    "verdadeiro_positivo (tp)": 2,
+    "falso_positivo (fp)": 0,
+    "falso_negativo (fn)": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 0.7941,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "fármacos vasopressores",
+          "efeito": "administração simultânea com fármacos ocitócicos do tipo Ergot poderá causar hipertensão grave e persistente ou acidentes cerebrovasculares"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "fármacos vasopressores",
+          "efeito": "hipertensão grave e persistente ou acidentes cerebrovasculares"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.825,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "fármacos ocitócicos do tipo Ergot",
+          "efeito": "administração simultânea com fármacos vasopressores poderá causar hipertensão grave e persistente ou acidentes cerebrovasculares"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "fármacos ocitócicos do tipo Ergot",
+          "efeito": "hipertensão grave e persistente ou acidentes cerebrovasculares"
+        }
+      }
+    ]
+  }
+}

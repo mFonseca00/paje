@@ -1,0 +1,505 @@
+{
+  "arquivo": "paciente__omeprazol.pdf",
+  "contraindicacoes": {
+    "verdadeiro_positivo (tp)": 5,
+    "falso_positivo (fp)": 2,
+    "falso_negativo (fn)": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 0.5172,
+        "gabarito": {
+          "descricao": "Contraindicado a pacientes alérgicos aos benzimidazois substituídos (medicamentos que incluem o omeprazol e outros com estrutura química semelhante, como o pantoprazol) ou a qualquer componente da formulação."
+        },
+        "extraida": {
+          "descricao": "O omeprazol cápsula de liberação retardada é contraindicado a pacientes alérgicos aos benzimidazois substituídos ou a qualquer componente da formulação."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.75,
+        "gabarito": {
+          "descricao": "Contraindicado para uso por pacientes recebendo medicamentos contendo rilpivirina."
+        },
+        "extraida": {
+          "descricao": "Este medicamento é contraindicado para uso por pacientes recebendo medicamentos contendo rilpivirina."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8667,
+        "gabarito": {
+          "descricao": "Não deve ser usado por pessoas com síndrome de má-absorção de glicose-galactose."
+        },
+        "extraida": {
+          "descricao": "Este medicamento não deve ser usado por pessoas com síndrome de má-absorção de glicose-galactose."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8462,
+        "gabarito": {
+          "descricao": "Não deve ser usado por pessoas com insuficiência de sacarose-isomaltase."
+        },
+        "extraida": {
+          "descricao": "Este medicamento não deve ser usado por pessoas com insuficiência de sacarose-isomaltase."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        },
+        "extraida": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.1463,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "O omeprazol não é indicado para uso em crianças acima de 2 anos e com peso entre 10 kg a menos que 20 kg."
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.1667,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "O omeprazol não é indicado para pacientes com insuficiência hepática e população asiática para manutenção da cicatrização da esofagite erosiva."
+        }
+      }
+    ]
+  },
+  "interacoes": {
+    "verdadeiro_positivo (tp)": 28,
+    "falso_positivo (fp)": 0,
+    "falso_negativo (fn)": 3,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 0.8,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "rilpivirina",
+          "efeito": "redução do efeito antiviral e resistência ao medicamento; uso concomitante contraindicado"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "rilpivirina",
+          "efeito": "redução do efeito antiviral e resistência a estes medicamentos"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.7324,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "atazanavir",
+          "efeito": "redução do efeito antiviral e resistência ao medicamento; uso concomitante deve ser evitado"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "atazanavir",
+          "efeito": "efeito antiviral reduzido e resistência a estes medicamentos"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.7324,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "nelfinavir",
+          "efeito": "redução do efeito antiviral e resistência ao medicamento; uso concomitante deve ser evitado"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "nelfinavir",
+          "efeito": "efeito antiviral reduzido e resistência a estes medicamentos"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.7083,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "saquinavir",
+          "efeito": "aumento da toxicidade do saquinavir"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "saquinavir",
+          "efeito": "toxicidade aumentada"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.9533,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "varfarina",
+          "efeito": "aumento do INR e do tempo de protrombina, podendo levar a sangramento anormal e até à morte"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "varfarina",
+          "efeito": "aumento da INR e tempo de protrombina, podendo levar a sangramento anormal e até à morte"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8333,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metotrexato",
+          "efeito": "aumento e prolongamento das concentrações de metotrexato e/ou de seu metabólito no sangue, com possibilidade de toxicidade"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metotrexato",
+          "efeito": "elevar e prolongar as concentrações de metotrexato e/ou do seu metabólito no sangue, levando à possibilidade de toxicidade do metotrexato"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8559,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "clopidogrel",
+          "efeito": "redução da concentração do metabólito do clopidogrel no sangue e diminuição da inibição das plaquetas"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "clopidogrel",
+          "efeito": "reduz a concentração do metabólito do clopidogrel no sangue e também diminui a inibição das plaquetas"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8688,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "citalopram",
+          "efeito": "aumento da exposição do citalopram, com maior risco de prolongamento do intervalo QT"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "citalopram",
+          "efeito": "aumento da exposição do citalopram, levando a um aumento no risco de prolongamento do intervalo QT"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "cilostazol",
+          "efeito": "aumento da exposição de um dos metabólitos ativos do cilostazol"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "cilostazol",
+          "efeito": "aumento da exposição de um dos metabólitos ativos do cilostazol"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fenitoína",
+          "efeito": "aumento da exposição da fenitoína"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fenitoína",
+          "efeito": "aumento da exposição da fenitoína"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "diazepam",
+          "efeito": "aumento da exposição do diazepam"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "diazepam",
+          "efeito": "aumento da exposição do diazepam"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "digoxina",
+          "efeito": "aumento da exposição da digoxina"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "digoxina",
+          "efeito": "aumento da exposição da digoxina"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.9611,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "sais de ferro",
+          "efeito": "redução da absorção devido à diminuição da acidez no estômago"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "sais de ferro",
+          "efeito": "redução da absorção devido à redução da acidez no estômago"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.9611,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "erlotinibe",
+          "efeito": "redução da absorção devido à diminuição da acidez no estômago"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "erlotinibe",
+          "efeito": "redução da absorção devido à redução da acidez no estômago"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.9611,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "dasatinibe",
+          "efeito": "redução da absorção devido à diminuição da acidez no estômago"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "dasatinibe",
+          "efeito": "redução da absorção devido à redução da acidez no estômago"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.9611,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "nilotinibe",
+          "efeito": "redução da absorção devido à diminuição da acidez no estômago"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "nilotinibe",
+          "efeito": "redução da absorção devido à redução da acidez no estômago"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.7083,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "micofenolato de mofetila",
+          "efeito": "redução da absorção devido à diminuição da acidez no estômago; uso em pacientes transplantados deve ser monitorado"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "micofenolato de mofetila",
+          "efeito": "exige monitoramento em pacientes transplantados"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.9611,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "cetoconazol",
+          "efeito": "redução da absorção devido à diminuição da acidez no estômago"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "cetoconazol",
+          "efeito": "redução da absorção devido à redução da acidez no estômago"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.9611,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "itraconazol",
+          "efeito": "redução da absorção devido à diminuição da acidez no estômago"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "itraconazol",
+          "efeito": "redução da absorção devido à redução da acidez no estômago"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.7941,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "claritromicina",
+          "efeito": "administração concomitante com outros medicamentos pode levar a reações adversas graves, incluindo arritmias potencialmente fatais; associação contraindicada"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "claritromicina",
+          "efeito": "reações adversas graves, incluindo arritmias potencialmente fatais"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "amoxicilina",
+          "efeito": "também apresenta interações medicamentosas quando usada em tratamento combinado"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "amoxicilina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "tacrolimo",
+          "efeito": "aumento da exposição do tacrolimo"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "tacrolimo",
+          "efeito": "aumento da exposição do tacrolimo"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ciclosporina",
+          "efeito": "relatos clínicos de interação com omeprazol"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ciclosporina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "dissulfiram",
+          "efeito": "relatos clínicos de interação com omeprazol"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "dissulfiram",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.7667,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "erva de São João",
+          "efeito": "diminuição da exposição (concentração sanguínea) de omeprazol"
+        },
+        "extraida": {
+          "tipo": "ALIMENTO",
+          "referencia": "erva de São João",
+          "efeito": "diminuir a exposição de omeprazol"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.7667,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "rifampicina",
+          "efeito": "diminuição da exposição (concentração sanguínea) de omeprazol"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "rifampicina",
+          "efeito": "diminuir a exposição de omeprazol"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.7667,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ritonavir",
+          "efeito": "diminuição da exposição (concentração sanguínea) de omeprazol"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ritonavir",
+          "efeito": "diminuir a exposição de omeprazol"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.7667,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "voriconazol",
+          "efeito": "aumento da exposição (concentração sanguínea) de omeprazol"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "voriconazol",
+          "efeito": "aumentar a exposição de omeprazol"
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0389,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "diuréticos",
+          "efeito": "uso prolongado junto com omeprazol pode exigir monitoramento dos níveis de magnésio, potássio e cálcio"
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0636,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "Antirretrovirais",
+          "efeito": "Alguns medicamentos antirretrovirais (por exemplo, rilpivirina, atazanavir e nelfinavir), quando usados concomitantemente com o omeprazol, podem ter o efeito antiviral reduzido e resistência a estes medicamentos. O uso de rilpivirina concomitante com omeprazol é contraindicado. Também deve ser evitado o uso concomitante de atazanavir e nelfinavir com omeprazol. Antirretrovirais (por exemplo, saquinavir), quando usado concomitantemente com omeprazol, podem ter a toxicidade aumentada. Para informações sobre interações medicamentos com outros antirretrovirais, consultar a bula dos medicamentos antirretrovirais específicos."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.1167,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "Medicamentos dependentes do pH gástrico para absorção,",
+          "efeito": "O omeprazol pode reduzir a absorção desses medicamentos devido à redução da acidez no estômago. O uso de micofenolato de mofetila em pacientes transplantados deve ser monitorado."
+        },
+        "extraida": null
+      }
+    ]
+  }
+}

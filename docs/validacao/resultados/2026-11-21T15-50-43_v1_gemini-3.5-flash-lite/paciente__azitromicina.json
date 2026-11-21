@@ -1,0 +1,177 @@
+{
+  "arquivo": "paciente__azitromicina.pdf",
+  "contraindicacoes": {
+    "verdadeiro_positivo (tp)": 4,
+    "falso_positivo (fp)": 1,
+    "falso_negativo (fn)": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 0.8077,
+        "gabarito": {
+          "descricao": "A azitromicina é contraindicada se você tem história de hipersensibilidade (reações alérgicas) à azitromicina, eritromicina, a qualquer antibiótico macrolídeo (classe de antibióticos a qual pertence a azitromicina), cetolídeo (outra classe de antibióticos) ou a qualquer componente da fórmula."
+        },
+        "extraida": {
+          "descricao": "A azitromicina é contraindicada se você tem história de hipersensibilidade (reações alérgicas) à azitromicina, eritromicina, a qualquer antibiótico macrolídeo, cetolídeo ou a qualquer componente da fórmula."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Não utilize a azitromicina juntamente com derivados do ergô (medicação com várias indicações incluindo analgesia, representados pela ergotamina)."
+        },
+        "extraida": {
+          "descricao": "Não utilize a azitromicina juntamente com derivados do ergô (medicação com varias indicações incluindo analgesia, representados pela ergotamina)."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Não use a azitromicina durante a amamentação sem orientação médica."
+        },
+        "extraida": {
+          "descricao": "Não use a azitromicina durante a amamentação sem orientação médica."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        },
+        "extraida": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.1481,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "Este medicamento contém açúcar (amido) e deve ser usado com cautela em portadores de diabetes."
+        }
+      }
+    ]
+  },
+  "interacoes": {
+    "verdadeiro_positivo (tp)": 8,
+    "falso_positivo (fp)": 0,
+    "falso_negativo (fn)": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "antiácidos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "antiácidos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "ergô",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "ergô",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "derivados do ergô",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "derivados do ergô",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "digoxina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "digoxina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "colchicina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "colchicina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "zidovudina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "zidovudina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "anticoagulantes orais do tipo cumarínicos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "anticoagulantes orais do tipo cumarínicos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ciclosporina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ciclosporina",
+          "efeito": null
+        }
+      }
+    ]
+  }
+}

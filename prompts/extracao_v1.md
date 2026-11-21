@@ -63,38 +63,66 @@ A azitromicina não deve ser administrada em conjunto com: antiácidos, ergô e 
 
 ```json
 {
-  "contraindicacoes": [
-    {
-      "id": 1,
-      "descricao": "Não deve ser utilizado se há histórico de hipersensibilidade (reações alérgicas) à azitromicina, eritromicina, a qualquer antibiótico macrolídeo, cetolídeo ou a qualquer componente da fórmula do próprio medicamento."
-    },
-    {
-      "id": 2,
-      "descricao": "Não deve ser utilizado juntamente a derivados do ergô (medicação com varias indicações incluindo analgesia, representados pela ergotamina)."
-    },
-    {
-      "id": 3,
-      "descricao": "Não deve ser utilizado durante a amamentação sem orientação médica."
-    },
-    {
-      "id": 4,
-      "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica."
-    },
-    {
-      "id": 5,
-      "descricao": "Este medicamento contém açúcar (amido) e deve ser usado com cautela em portadores de diabetes."
-    }
-  ],
-  "interacoes": [
-    {"id": 1, "tipo": "CLASSE", "referencia": "antiácidos", "efeito": null},
-    {"id": 2, "tipo": "CLASSE", "referencia": "ergô", "efeito": null},
-    {"id": 3, "tipo": "CLASSE", "referencia": "derivados do ergô", "efeito": null},
-    {"id": 4, "tipo": "NOME_DIRETO", "referencia": "digoxina", "efeito": null},
-    {"id": 5, "tipo": "NOME_DIRETO", "referencia": "colchicina", "efeito": null},
-    {"id": 6, "tipo": "NOME_DIRETO", "referencia": "zidovudina", "efeito": null},
-    {"id": 7, "tipo": "CLASSE", "referencia": "anticoagulantes orais do tipo cumarínicos", "efeito": null},
-    {"id": 8, "tipo": "NOME_DIRETO", "referencia": "ciclosporina", "efeito": null}
-  ]
+   "contraindicacoes":[
+      {
+         "id":1,
+         "descricao":"A azitromicina é contraindicada se você tem história de hipersensibilidade (reações alérgicas) à azitromicina, eritromicina, a qualquer antibiótico macrolídeo (classe de antibióticos a qual pertence a azitromicina), cetolídeo (outra classe de antibióticos) ou a qualquer componente da fórmula."
+      },
+      {
+         "id":2,
+         "descricao":"Não utilize a azitromicina juntamente com derivados do ergô (medicação com várias indicações incluindo analgesia, representados pela ergotamina)."
+      },
+      {
+         "id":3,
+         "descricao":"Não use a azitromicina durante a amamentação sem orientação médica."
+      },
+      {
+         "id":4,
+         "descricao":"Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+      }
+   ],
+   "interacoes":[
+      {
+         "id":1,
+         "tipo":"CLASSE",
+         "referencia":"antiácidos"
+      },
+      {
+         "id":2,
+         "tipo":"CLASSE",
+         "referencia":"ergô"
+      },
+      {
+         "id":3,
+         "tipo":"CLASSE",
+         "referencia":"derivados do ergô"
+      },
+      {
+         "id":4,
+         "tipo":"NOME_DIRETO",
+         "referencia":"digoxina"
+      },
+      {
+         "id":5,
+         "tipo":"NOME_DIRETO",
+         "referencia":"colchicina"
+      },
+      {
+         "id":6,
+         "tipo":"NOME_DIRETO",
+         "referencia":"zidovudina"
+      },
+      {
+         "id":7,
+         "tipo":"CLASSE",
+         "referencia":"anticoagulantes orais do tipo cumarínicos"
+      },
+      {
+         "id":8,
+         "tipo":"NOME_DIRETO",
+         "referencia":"ciclosporina"
+      }
+   ]
 }
 ```
 ---
@@ -161,26 +189,42 @@ A alimentação não interfere na ação de amoxicilina tri-hidratada, que pode 
 
 ```json
 {
-  "contraindicacoes": [
-    {
-      "id": 1,
-      "descricao": "Este medicamento não pode ser administrado nem ingerido por pessoas alérgicas à amoxicilina, a outros antibióticos penicilínicos ou antibióticos similares, chamados cefalosporinas."
-    },
-    {
-      "id": 2,
-      "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
-    },
-    {
-      "id": 3,
-      "descricao": "Este medicamento não é recomendado para uso por crianças."
-    }
-  ],
-  "interacoes": [
-    {"id": 1, "tipo": "NOME_DIRETO", "referencia": "probenecida", "efeito": null},
-    {"id": 2, "tipo": "NOME_DIRETO", "referencia": "alopurinol", "efeito": null},
-    {"id": 3, "tipo": "CLASSE", "referencia": "antibióticos", "efeito": null},
-    {"id": 4, "tipo": "CLASSE", "referencia": "pílulas anticoncepcionais", "efeito": null}
-  ]
+   "contraindicacoes":[
+      {
+         "id":1,
+         "descricao":"Este medicamento não pode ser administrado nem ingerido por pessoas alérgicas à amoxicilina, a outros antibióticos penicilínicos ou antibióticos similares, chamados cefalosporinas."
+      },
+      {
+         "id":2,
+         "descricao":"Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+      },
+      {
+         "id":3,
+         "descricao":"A amoxicilina tri-hidratada comprimidos não é recomendado para uso por crianças."
+      }
+   ],
+   "interacoes":[
+      {
+         "id":1,
+         "tipo":"NOME_DIRETO",
+         "referencia":"probenecida"
+      },
+      {
+         "id":2,
+         "tipo":"NOME_DIRETO",
+         "referencia":"alopurinol"
+      },
+      {
+         "id":3,
+         "tipo":"CLASSE",
+         "referencia":"antibióticos"
+      },
+      {
+         "id":4,
+         "tipo":"CLASSE",
+         "referencia":"pílulas anticoncepcionais"
+      }
+   ]
 }
 ```
 
@@ -238,31 +282,70 @@ Converse com seu médico antes de iniciar o tratamento com amoxicilina + clavula
 
 ```json
 {
-  "contraindicacoes": [
-    {
-      "id": 1,
-      "descricao": "Este medicamento é contraindicado para pacientes que apresentam reações alérgicas e hipersensibilidade às penicilinas."
-    },
-    {
-      "id": 2,
-      "descricao": "Este medicamento é contraindicado para pacientes que apresentam disfunção do fígado ou icterícia associadas ao uso de amoxicilina + clavulanato de potássio ou de outras penicilinas."
-    },
-    {
-      "id": 3,
-      "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
-    }
-  ],
-  "interacoes": [
-    {"id": 1, "tipo": "NOME_DIRETO", "referencia": "probenecida", "efeito": null},
-    {"id": 2, "tipo": "NOME_DIRETO", "referencia": "alopurinol", "efeito": null},
-    {"id": 3, "tipo": "CLASSE", "referencia": "anticoncepcionais orais", "efeito": null},
-    {"id": 4, "tipo": "NOME_DIRETO", "referencia": "dissulfiram", "efeito": null},
-    {"id": 5, "tipo": "CLASSE", "referencia": "anticoagulantes", "efeito": "risco de sangramento"},
-    {"id": 6, "tipo": "NOME_DIRETO", "referencia": "acenocumarol", "efeito": "risco de sangramento"},
-    {"id": 7, "tipo": "NOME_DIRETO", "referencia": "varfarina", "efeito": "risco de sangramento"},
-    {"id": 8, "tipo": "NOME_DIRETO", "referencia": "micofenolato de mofetila", "efeito": null},
-    {"id": 9, "tipo": "NOME_DIRETO", "referencia": "metotrexato", "efeito": null}
-  ]
+   "contraindicacoes":[
+      {
+         "id":1,
+         "descricao":"A amoxicilina + clavulanato de potássio é contraindicada para pacientes que apresentam reações alérgicas e hipersensibilidade às penicilinas."
+      },
+      {
+         "id":2,
+         "descricao":"A amoxicilina + clavulanato de potássio é contraindicada para pacientes que apresentam disfunção do fígado ou icterícia (amarelamento da pele e dos olhos) associadas ao uso de amoxicilina + clavulanato de potássio ou de outras penicilinas."
+      },
+      {
+         "id":3,
+         "descricao":"Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+      }
+   ],
+   "interacoes":[
+      {
+         "id":1,
+         "tipo":"NOME_DIRETO",
+         "referencia":"probenecida"
+      },
+      {
+         "id":2,
+         "tipo":"NOME_DIRETO",
+         "referencia":"alopurinol"
+      },
+      {
+         "id":3,
+         "tipo":"CLASSE",
+         "referencia":"anticoncepcionais orais"
+      },
+      {
+         "id":4,
+         "tipo":"NOME_DIRETO",
+         "referencia":"dissulfiram"
+      },
+      {
+         "id":5,
+         "tipo":"CLASSE",
+         "referencia":"anticoagulantes",
+         "efeito":"maior risco de sangramento"
+      },
+      {
+         "id":6,
+         "tipo":"NOME_DIRETO",
+         "referencia":"acenocumarol",
+         "efeito":"maior risco de sangramento"
+      },
+      {
+         "id":7,
+         "tipo":"NOME_DIRETO",
+         "referencia":"varfarina",
+         "efeito":"maior risco de sangramento"
+      },
+      {
+         "id":8,
+         "tipo":"NOME_DIRETO",
+         "referencia":"micofenolato de mofetila"
+      },
+      {
+         "id":9,
+         "tipo":"NOME_DIRETO",
+         "referencia":"metotrexato"
+      }
+   ]
 }
 ```
 
@@ -332,41 +415,77 @@ O alendronato de sódio só é eficaz se ingerido quando seu estômago estiver v
 
 ```json
 {
-  "contraindicacoes": [
-    {
-      "id": 1,
-      "descricao": "Este medicamento é contraindicado para o paciente que apresentar algum distúrbio do esôfago."
-    },
-    {
-      "id": 2,
-      "descricao": "Este medicamento é contraindicado caso o paciente não consiga permanecer em pé ou na posição sentada durante, pelo menos, 30 minutos."
-    },
-    {
-      "id": 3,
-      "descricao": "Este medicamento é contraindicado para pacientes que apresentam hipersensibilidade a alendronato de sódio tri-hidratado, celulose microcristalina, lactose, croscarmelose sódica e estearato de magnésio."
-    },
-    {
-      "id": 4,
-      "descricao": "Este medicamento é contraindicado caso o paciente apresente deficiência de cálcio no sangue."
-    },
-    {
-      "id": 5,
-      "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião dentista."
-    },
-    {
-      "id": 6,
-      "descricao": "Este medicamento é contraindicado para uso em crianças."
-    }
-  ],
-  "interacoes": [
-    {"id": 1, "tipo": "ALIMENTO", "referencia": "água mineral", "efeito": "potencial de irritação do esôfago"},
-    {"id": 2, "tipo": "ALIMENTO", "referencia": "café", "efeito": "potencial de irritação do esôfago"},
-    {"id": 3, "tipo": "ALIMENTO", "referencia": "chá", "efeito": "potencial de irritação do esôfago"},
-    {"id": 4, "tipo": "ALIMENTO", "referencia": "suco", "efeito": "potencial de irritação do esôfago"},
-    {"id": 5, "tipo": "CLASSE", "referencia": "antiácidos", "efeito": null},
-    {"id": 6, "tipo": "CLASSE", "referencia": "suplementos de cálcio", "efeito": null},
-    {"id": 7, "tipo": "CLASSE", "referencia": "vitaminas", "efeito": null}
-  ]
+   "contraindicacoes":[
+      {
+         "id":1,
+         "descricao":"Você não deve tomar alendronato de sódio se apresentar algum distúrbio do esôfago (o tubo que liga a boca ao estômago)."
+      },
+      {
+         "id":2,
+         "descricao":"Você não deve tomar alendronato de sódio se não conseguir permanecer em pé ou na posição sentada durante, pelo menos, 30 minutos."
+      },
+      {
+         "id":3,
+         "descricao":"Você não deve tomar alendronato de sódio se tiver hipersensibilidade a qualquer componente do produto (veja item \"COMPOSIÇÃO\")."
+      },
+      {
+         "id":4,
+         "descricao":"Você não deve tomar alendronato de sódio se seu médico lhe disser que atualmente você apresenta deficiência de cálcio no sangue."
+      },
+      {
+         "id":5,
+         "descricao":"não tome alendronato de sódio se você estiver grávida. Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião dentista."
+      },
+      {
+         "id":6,
+         "descricao":"não tome alendronato de sódio se você estiver amamentando."
+      },
+      {
+         "id":7,
+         "descricao":"O alendronato de sódio não é indicado para uso em crianças."
+      }
+   ],
+   "interacoes":[
+      {
+         "id":1,
+         "tipo":"ALIMENTO",
+         "referencia":"água mineral",
+         "efeito":"potencial de irritação do esôfago"
+      },
+      {
+         "id":2,
+         "tipo":"ALIMENTO",
+         "referencia":"café",
+         "efeito":"potencial de irritação do esôfago"
+      },
+      {
+         "id":3,
+         "tipo":"ALIMENTO",
+         "referencia":"chá",
+         "efeito":"potencial de irritação do esôfago"
+      },
+      {
+         "id":4,
+         "tipo":"ALIMENTO",
+         "referencia":"suco",
+         "efeito":"potencial de irritação do esôfago"
+      },
+      {
+         "id":5,
+         "tipo":"CLASSE",
+         "referencia":"antiácidos"
+      },
+      {
+         "id":6,
+         "tipo":"CLASSE",
+         "referencia":"suplementos de cálcio"
+      },
+      {
+         "id":7,
+         "tipo":"CLASSE",
+         "referencia":"vitaminas"
+      }
+   ]
 }
 ```
 

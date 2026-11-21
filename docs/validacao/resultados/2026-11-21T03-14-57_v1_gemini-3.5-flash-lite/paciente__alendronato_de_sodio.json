@@ -1,0 +1,167 @@
+{
+  "arquivo": "paciente__alendronato_de_sodio.pdf",
+  "contraindicacoes": {
+    "tp": 4,
+    "fp": 2,
+    "fn": 3,
+    "matches": [
+      {
+        "classificacao": "FN",
+        "score": 0.2778,
+        "gabarito": {
+          "descricao": "Contraindicado para o paciente que apresentar algum distúrbio do esôfago."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.5,
+        "gabarito": {
+          "descricao": "Contraindicado caso o paciente não consiga permanecer em pé ou na posição sentada durante, pelo menos, 30 minutos."
+        },
+        "extraida": {
+          "descricao": "Você não deve tomar alendronato de sódio se não conseguir permanecer em pé ou na posição sentada durante, pelo menos, 30 minutos."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.4516,
+        "gabarito": {
+          "descricao": "Contraindicado para pacientes que apresentam hipersensibilidade a alendronato de sódio tri-hidratado, celulose microcristalina, lactose, croscarmelose sódica ou estearato de magnésio."
+        },
+        "extraida": {
+          "descricao": "Você não deve tomar alendronato de sódio se tiver hipersensibilidade a qualquer componente do produto (alendronato de sódio tri-hidratado, celulose microcristalina, lactose, croscarmelose sódica e estearato de magnésio)."
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.2083,
+        "gabarito": {
+          "descricao": "Contraindicado caso o paciente apresente deficiência de cálcio no sangue."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.64,
+        "gabarito": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião dentista."
+        },
+        "extraida": {
+          "descricao": "Não tome alendronato de sódio se você estiver grávida ou amamentando. Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião dentista."
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.28,
+        "gabarito": {
+          "descricao": "Não deve ser utilizado por mulheres amamentando."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6364,
+        "gabarito": {
+          "descricao": "Não é indicado para uso em crianças."
+        },
+        "extraida": {
+          "descricao": "O alendronato de sódio não é indicado para uso em crianças."
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.2778,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "Você não deve tomar alendronato de sódio se apresentar algum distúrbio do esôfago."
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.2083,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "Você não deve tomar alendronato de sódio se seu médico lhe disser que atualmente você apresenta deficiência de cálcio no sangue."
+        }
+      }
+    ]
+  },
+  "interacoes": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 7,
+    "matches": [
+      {
+        "classificacao": "FN",
+        "score": 0.0,
+        "gabarito": {
+          "tipo": "ALIMENTO",
+          "referencia": "água mineral",
+          "efeito": "potencial de irritação do esôfago"
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0,
+        "gabarito": {
+          "tipo": "ALIMENTO",
+          "referencia": "café",
+          "efeito": "potencial de irritação do esôfago"
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0,
+        "gabarito": {
+          "tipo": "ALIMENTO",
+          "referencia": "chá",
+          "efeito": "potencial de irritação do esôfago"
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0,
+        "gabarito": {
+          "tipo": "ALIMENTO",
+          "referencia": "suco",
+          "efeito": "potencial de irritação do esôfago"
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "antiácidos",
+          "efeito": null
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "suplementos de cálcio",
+          "efeito": null
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "vitaminas",
+          "efeito": null
+        },
+        "extraida": null
+      }
+    ]
+  }
+}

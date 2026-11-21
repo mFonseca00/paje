@@ -1,22 +1,38 @@
 {
-  "contraindicacoes": [
-    {
-      "id": 1,
-      "descricao": "Este medicamento não pode ser administrado nem ingerido por pessoas alérgicas à amoxicilina, a outros antibióticos penicilínicos ou antibióticos similares, chamados cefalosporinas."
-    },
-    {
-      "id": 2,
-      "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
-    },
-    {
-      "id": 3,
-      "descricao": "Este medicamento não é recomendado para uso por crianças."
-    }
-  ],
-  "interacoes": [
-    {"id": 1, "tipo": "NOME_DIRETO", "referencia": "probenecida", "efeito": null},
-    {"id": 2, "tipo": "NOME_DIRETO", "referencia": "alopurinol", "efeito": null},
-    {"id": 3, "tipo": "CLASSE", "referencia": "antibióticos", "efeito": null},
-    {"id": 4, "tipo": "CLASSE", "referencia": "pílulas anticoncepcionais", "efeito": null}
-  ]
+   "contraindicacoes":[
+      {
+         "id":1,
+         "descricao":"Este medicamento não pode ser administrado nem ingerido por pessoas alérgicas à amoxicilina, a outros antibióticos penicilínicos ou antibióticos similares, chamados cefalosporinas."
+      },
+      {
+         "id":2,
+         "descricao":"Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+      },
+      {
+         "id":3,
+         "descricao":"A amoxicilina tri-hidratada comprimidos não é recomendado para uso por crianças."
+      }
+   ],
+   "interacoes":[
+      {
+         "id":1,
+         "tipo":"NOME_DIRETO",
+         "referencia":"probenecida"
+      },
+      {
+         "id":2,
+         "tipo":"NOME_DIRETO",
+         "referencia":"alopurinol"
+      },
+      {
+         "id":3,
+         "tipo":"CLASSE",
+         "referencia":"antibióticos"
+      },
+      {
+         "id":4,
+         "tipo":"CLASSE",
+         "referencia":"pílulas anticoncepcionais"
+      }
+   ]
 }

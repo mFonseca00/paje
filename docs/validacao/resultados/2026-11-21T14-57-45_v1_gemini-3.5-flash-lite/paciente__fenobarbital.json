@@ -1,0 +1,1007 @@
+{
+  "arquivo": "paciente__fenobarbital.pdf",
+  "contraindicacoes": {
+    "verdadeiro_positivo (tp)": 6,
+    "falso_positivo (fp)": 5,
+    "falso_negativo (fn)": 7,
+    "matches": [
+      {
+        "classificacao": "FN",
+        "score": 0.1667,
+        "gabarito": {
+          "descricao": "O fenobarbital não deve ser utilizado nos seguintes casos: porfiria (doença metabólica que se manifesta através de problemas na pele e/ou com complicações neurológicas)."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.1875,
+        "gabarito": {
+          "descricao": "O fenobarbital não deve ser utilizado nos seguintes casos: insuficiência respiratória severa."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.1071,
+        "gabarito": {
+          "descricao": "O fenobarbital não deve ser utilizado nos seguintes casos: insuficiência hepática (do fígado) grave."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.1071,
+        "gabarito": {
+          "descricao": "O fenobarbital não deve ser utilizado nos seguintes casos: insuficiência renal (dos rins) grave."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.3158,
+        "gabarito": {
+          "descricao": "O fenobarbital não deve ser utilizado nos seguintes casos: antecedentes de hipersensibilidade (alergia) aos barbitúricos."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.303,
+        "gabarito": {
+          "descricao": "Não deve ser usado por mulheres ou crianças do sexo feminino em idade fértil, devido aos riscos de malformações congênitas e distúrbios do desenvolvimento neurológico para o feto em caso de gravidez."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.1875,
+        "gabarito": {
+          "descricao": "Não deve ser usado se estiver grávida, devido aos riscos de malformações congênitas e distúrbios do desenvolvimento neurológico para o feto em caso de gravidez."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8333,
+        "gabarito": {
+          "descricao": "O fenobarbital também é contraindicado em pacientes que fazem uso de saquinavir, daclatasvir, dasabuvir, paritaprevir, ombitasvir, ledipasvir, sofosbuvir."
+        },
+        "extraida": {
+          "descricao": "Contraindicado em pacientes que fazem uso de saquinavir, daclatasvir, dasabuvir, paritaprevir, ombitasvir, ledipasvir e sofosbuvir."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.75,
+        "gabarito": {
+          "descricao": "O fenobarbital é contraindicado com uso de álcool."
+        },
+        "extraida": {
+          "descricao": "Contraindicado com o uso de álcool."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8667,
+        "gabarito": {
+          "descricao": "O fenobarbital é contraindicado com uso de estrógenos (hormônios sexuais femininos) utilizados como contraceptivos."
+        },
+        "extraida": {
+          "descricao": "Contraindicado com o uso de estrógenos e progestogênio (hormônios sexuais femininos) utilizados como contraceptivos."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8667,
+        "gabarito": {
+          "descricao": "O fenobarbital é contraindicado com uso de progestogênio (hormônios sexuais femininos) utilizados como contraceptivos."
+        },
+        "extraida": {
+          "descricao": "Contraindicado com o uso de estrógenos e progestogênio (hormônios sexuais femininos) utilizados como contraceptivos."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.5714,
+        "gabarito": {
+          "descricao": "O fenobarbital é contraindicado durante a lactação."
+        },
+        "extraida": {
+          "descricao": "Contraindicado durante a lactação."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8947,
+        "gabarito": {
+          "descricao": "Este medicamento contém lactose monoidratada e não deve ser usado por pessoas com síndrome de má-absorção de glicose-galactose."
+        },
+        "extraida": {
+          "descricao": "Contém lactose monoidratada e não deve ser usado por pessoas com síndrome de má-absorção de glicose-galactose."
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.1818,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "Contraindicado para pacientes com porfiria."
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.1875,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "Contraindicado para pacientes com insuficiência respiratória severa."
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.1333,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "Contraindicado para pacientes com insuficiência hepática ou renal graves."
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.3158,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "Contraindicado em pacientes com antecedentes de hipersensibilidade (alergia) aos barbitúricos."
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.303,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "Contraindicado para mulheres ou crianças do sexo feminino em idade fértil ou se estiver grávida."
+        }
+      }
+    ]
+  },
+  "interacoes": {
+    "verdadeiro_positivo (tp)": 51,
+    "falso_positivo (fp)": 4,
+    "falso_negativo (fn)": 8,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "ALIMENTO",
+          "referencia": "álcool",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "ALIMENTO",
+          "referencia": "álcool",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.5,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "imipramina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "antidepressivo imipramina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metadona",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metadona",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "outros depressores do sistema nervoso central",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "outros depressores do sistema nervoso central",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metotrexato",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metotrexato",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.3333,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "derivados da morfina",
+          "efeito": null
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "benzodiazepínicos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "benzodiazepínicos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "saquinavir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "saquinavir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "daclatasvir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "daclatasvir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "dasabuvir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "dasabuvir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "paritaprevir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "paritaprevir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ombitasvir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ombitasvir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ledipasvir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ledipasvir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "sofosbuvir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "sofosbuvir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ifosfamida",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ifosfamida",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "anticoagulantes orais",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "anticoagulantes orais",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "amprenavir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "amprenavir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "indinavir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "indinavir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "nelfinavir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "nelfinavir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ciclosporina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ciclosporina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "tacrolimus",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "tacrolimus",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "corticosteroides (glicocorticoides e mineralocorticoides sistêmicos)",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "corticosteroides (glicocorticoides e mineralocorticoides sistêmicos)",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "digitoxina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "digitoxina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "diidropiridina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "diidropiridina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "disopiramida",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "disopiramida",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "doxiciclina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "doxiciclina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "hormônios tireoidianos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "hormônios tireoidianos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "hidroquinidina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "hidroquinidina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "quinidina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "quinidina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "itraconazol",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "itraconazol",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "montelucaste",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "montelucaste",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.25,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "teofilina",
+          "efeito": null
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "aminofilina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "aminofilina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "zidovudina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "zidovudina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.2222,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "estrógenos (uso não contraceptivo)",
+          "efeito": null
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.2222,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "progestágenos (uso não contraceptivo)",
+          "efeito": null
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8143,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "estrógenos (utilizados como contraceptivos hormonais)",
+          "efeito": "redução do efeito contraceptivo esperado"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "estrógenos e progestágenos (utilizados como contraceptivos hormonais)",
+          "efeito": "redução do efeito contraceptivo esperado"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8143,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "progestágenos (utilizados como contraceptivos hormonais)",
+          "efeito": "redução do efeito contraceptivo esperado"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "estrógenos e progestágenos (utilizados como contraceptivos hormonais)",
+          "efeito": "redução do efeito contraceptivo esperado"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ritonavir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ritonavir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "simeprevir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "simeprevir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "dolutegravir",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "dolutegravir",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "medicamentos anticancerígenos",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "medicamentos anticancerígenos",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "lamotrigina",
+          "efeito": null
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "alprenolol",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "alprenolol",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metoprolol",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metoprolol",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "propranolol",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "propranolol",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "carbamazepina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "carbamazepina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "procarbazina",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "procarbazina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.5,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "amitriptilina/amitriptilinóxido",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "amitriptilina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "apixabana",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "apixabana",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ticagrelor",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ticagrelor",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.3333,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ácido fólico",
+          "efeito": "Fenobarbital interfere no metabolismo do ácido fólico; recomenda-se suplementação adequada, especialmente durante a gravidez."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ácido valpróico",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ácido valpróico",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "felbamato",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "felbamato",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "progabida",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "progabida",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fenitoína",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fenitoína",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "cenobamato",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "cenobamato",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0206,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "cálcio",
+          "efeito": "Fenobarbital interfere no metabolismo do cálcio; recomenda-se suplementação adequada durante a gravidez."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "vitamina K",
+          "efeito": "Fenobarbital interfere no metabolismo da vitamina K; recomenda-se suplementação adequada durante a gravidez."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.3333,
+        "gabarito": null,
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "derivados da morfina (analgésicos, antitussígenos e terapias de reposição)",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.25,
+        "gabarito": null,
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "teofilina (base e sais)",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.0,
+        "gabarito": null,
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "lomotrigina",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.0,
+        "gabarito": null,
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "folatos",
+          "efeito": null
+        }
+      }
+    ]
+  }
+}

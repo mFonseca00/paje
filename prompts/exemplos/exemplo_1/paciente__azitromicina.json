@@ -1,34 +1,62 @@
 {
-  "contraindicacoes": [
-    {
-      "id": 1,
-      "descricao": "Não deve ser utilizado se há histórico de hipersensibilidade (reações alérgicas) à azitromicina, eritromicina, a qualquer antibiótico macrolídeo, cetolídeo ou a qualquer componente da fórmula do próprio medicamento."
-    },
-    {
-      "id": 2,
-      "descricao": "Não deve ser utilizado juntamente a derivados do ergô (medicação com varias indicações incluindo analgesia, representados pela ergotamina)."
-    },
-    {
-      "id": 3,
-      "descricao": "Não deve ser utilizado durante a amamentação sem orientação médica."
-    },
-    {
-      "id": 4,
-      "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica."
-    },
-    {
-      "id": 5,
-      "descricao": "Este medicamento contém açúcar (amido) e deve ser usado com cautela em portadores de diabetes."
-    }
-  ],
-  "interacoes": [
-    {"id": 1, "tipo": "CLASSE", "referencia": "antiácidos", "efeito": null},
-    {"id": 2, "tipo": "CLASSE", "referencia": "ergô", "efeito": null},
-    {"id": 3, "tipo": "CLASSE", "referencia": "derivados do ergô", "efeito": null},
-    {"id": 4, "tipo": "NOME_DIRETO", "referencia": "digoxina", "efeito": null},
-    {"id": 5, "tipo": "NOME_DIRETO", "referencia": "colchicina", "efeito": null},
-    {"id": 6, "tipo": "NOME_DIRETO", "referencia": "zidovudina", "efeito": null},
-    {"id": 7, "tipo": "CLASSE", "referencia": "anticoagulantes orais do tipo cumarínicos", "efeito": null},
-    {"id": 8, "tipo": "NOME_DIRETO", "referencia": "ciclosporina", "efeito": null}
-  ]
+   "contraindicacoes":[
+      {
+         "id":1,
+         "descricao":"A azitromicina é contraindicada se você tem história de hipersensibilidade (reações alérgicas) à azitromicina, eritromicina, a qualquer antibiótico macrolídeo (classe de antibióticos a qual pertence a azitromicina), cetolídeo (outra classe de antibióticos) ou a qualquer componente da fórmula."
+      },
+      {
+         "id":2,
+         "descricao":"Não utilize a azitromicina juntamente com derivados do ergô (medicação com várias indicações incluindo analgesia, representados pela ergotamina)."
+      },
+      {
+         "id":3,
+         "descricao":"Não use a azitromicina durante a amamentação sem orientação médica."
+      },
+      {
+         "id":4,
+         "descricao":"Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+      }
+   ],
+   "interacoes":[
+      {
+         "id":1,
+         "tipo":"CLASSE",
+         "referencia":"antiácidos"
+      },
+      {
+         "id":2,
+         "tipo":"CLASSE",
+         "referencia":"ergô"
+      },
+      {
+         "id":3,
+         "tipo":"CLASSE",
+         "referencia":"derivados do ergô"
+      },
+      {
+         "id":4,
+         "tipo":"NOME_DIRETO",
+         "referencia":"digoxina"
+      },
+      {
+         "id":5,
+         "tipo":"NOME_DIRETO",
+         "referencia":"colchicina"
+      },
+      {
+         "id":6,
+         "tipo":"NOME_DIRETO",
+         "referencia":"zidovudina"
+      },
+      {
+         "id":7,
+         "tipo":"CLASSE",
+         "referencia":"anticoagulantes orais do tipo cumarínicos"
+      },
+      {
+         "id":8,
+         "tipo":"NOME_DIRETO",
+         "referencia":"ciclosporina"
+      }
+   ]
 }

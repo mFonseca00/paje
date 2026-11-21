@@ -1,0 +1,173 @@
+{
+  "arquivo": "paciente__amoxicilina_clavulanato_de_potassio.pdf",
+  "contraindicacoes": {
+    "verdadeiro_positivo (tp)": 3,
+    "falso_positivo (fp)": 0,
+    "falso_negativo (fn)": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 0.5263,
+        "gabarito": {
+          "descricao": "A amoxicilina + clavulanato de potássio é contraindicada para pacientes que apresentam reações alérgicas e hipersensibilidade às penicilinas."
+        },
+        "extraida": {
+          "descricao": "Este medicamento é contraindicado para pacientes que apresentam reações alérgicas e hipersensibilidade às penicilinas."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6552,
+        "gabarito": {
+          "descricao": "A amoxicilina + clavulanato de potássio é contraindicada para pacientes que apresentam disfunção do fígado ou icterícia (amarelamento da pele e dos olhos) associadas ao uso de amoxicilina + clavulanato de potássio ou de outras penicilinas."
+        },
+        "extraida": {
+          "descricao": "Este medicamento é contraindicado para pacientes que apresentam disfunção do fígado ou icterícia associadas ao uso de amoxicilina + clavulanato de potássio ou de outras penicilinas."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        },
+        "extraida": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        }
+      }
+    ]
+  },
+  "interacoes": {
+    "verdadeiro_positivo (tp)": 9,
+    "falso_positivo (fp)": 0,
+    "falso_negativo (fn)": 0,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "probenecida",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "probenecida",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "alopurinol",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "alopurinol",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "anticoncepcionais orais",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "anticoncepcionais orais",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "dissulfiram",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "dissulfiram",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "anticoagulantes",
+          "efeito": "maior risco de sangramento"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "anticoagulantes",
+          "efeito": "maior risco de sangramento"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "acenocumarol",
+          "efeito": "maior risco de sangramento"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "acenocumarol",
+          "efeito": "maior risco de sangramento"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "varfarina",
+          "efeito": "maior risco de sangramento"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "varfarina",
+          "efeito": "maior risco de sangramento"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "micofenolato de mofetila",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "micofenolato de mofetila",
+          "efeito": null
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metotrexato",
+          "efeito": null
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "metotrexato",
+          "efeito": null
+        }
+      }
+    ]
+  }
+}

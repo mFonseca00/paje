@@ -1,0 +1,465 @@
+{
+  "arquivo": "paciente__gliclazida.pdf",
+  "contraindicacoes": {
+    "tp": 7,
+    "fp": 1,
+    "fn": 1,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 0.8,
+        "gabarito": {
+          "descricao": "Contraindicado para pacientes com alergia (hipersensibilidade) à gliclazida, a qualquer outro componente da fórmula, a outros medicamentos da mesma classe (sulfonilureias) ou a outros medicamentos relacionados (sulfamidas hipoglicemiantes)."
+        },
+        "extraida": {
+          "descricao": "Contraindicado para pacientes alérgicos (que possuem hipersensibilidade) à gliclazida, qualquer outro componente da fórmula da gliclazida, outros medicamentos da mesma classe (sulfonilureias) ou outros medicamentos relacionados (sulfamidas hipoglicemiantes)."
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.3529,
+        "gabarito": {
+          "descricao": "Contraindicado para pacientes com diabetes tipo 1."
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8,
+        "gabarito": {
+          "descricao": "Contraindicado para pacientes que apresentam corpos cetônicos ou açúcar na urina (possível cetoacidose), em pré-coma ou coma diabético."
+        },
+        "extraida": {
+          "descricao": "Contraindicado para pacientes que apresentam corpos cetônicos ou açúcar na urina (indicando diabetes com cetoacidose), em pré-coma ou coma diabético."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.7273,
+        "gabarito": {
+          "descricao": "Contraindicado para pacientes com doença renal ou hepática grave."
+        },
+        "extraida": {
+          "descricao": "Contraindicado para pacientes que apresentam doença renal ou hepática grave."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Contraindicado em pacientes em uso de medicamentos para tratamento de infecções fúngicas (miconazol)."
+        },
+        "extraida": {
+          "descricao": "Contraindicado para pacientes em uso de medicamentos para tratamento de infecções fúngicas (miconazol)."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Contraindicado durante a amamentação."
+        },
+        "extraida": {
+          "descricao": "Contraindicado durante a amamentação."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6667,
+        "gabarito": {
+          "descricao": "Contraindicado para menores de 18 anos."
+        },
+        "extraida": {
+          "descricao": "Este medicamento é contraindicado para menores de 18 anos."
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 1.0,
+        "gabarito": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        },
+        "extraida": {
+          "descricao": "Este medicamento não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista."
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.3529,
+        "gabarito": null,
+        "extraida": {
+          "descricao": "Contraindicado para pacientes que apresentam diabetes tipo 1 (tipo de diabetes no qual o paciente faz uso de insulina)."
+        }
+      }
+    ]
+  },
+  "interacoes": {
+    "tp": 23,
+    "fp": 2,
+    "fn": 2,
+    "matches": [
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "agentes antidiabéticos orais",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "agentes antidiabéticos orais",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "agonistas dos receptores GLP-1",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "agonistas dos receptores GLP-1",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "insulina",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "insulina",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "sulfonamidas",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "sulfonamidas",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.1591,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "claritromicina",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "betabloqueadores",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "betabloqueadores",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "captopril",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "captopril",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "enalapril",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "enalapril",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "miconazol",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "miconazol",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fluconazol",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fluconazol",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "antagonistas dos receptores H2",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "antagonistas dos receptores H2",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "inibidores da monoaminoxidase",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "inibidores da monoaminoxidase",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fenilbutazona",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "fenilbutazona",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6937,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ibuprofeno",
+          "efeito": "aumento do efeito hipoglicêmico da gliclazida"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ibuprofeno",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6957,
+        "gabarito": {
+          "tipo": "ALIMENTO",
+          "referencia": "álcool",
+          "efeito": "pode aumentar o efeito hipoglicêmico da gliclazida e modificar o controle da diabetes de maneira imprevisível"
+        },
+        "extraida": {
+          "tipo": "ALIMENTO",
+          "referencia": "álcool",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8542,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "clorpromazina",
+          "efeito": "diminuição do efeito hipoglicêmico da gliclazida, podendo causar hiperglicemia"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "clorpromazina",
+          "efeito": "Diminuição do efeito hipoglicêmico da gliclazida e ocorrência de hiperglicemia"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8542,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "corticosteroides",
+          "efeito": "diminuição do efeito hipoglicêmico da gliclazida, podendo causar hiperglicemia"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "corticosteroides",
+          "efeito": "Diminuição do efeito hipoglicêmico da gliclazida e ocorrência de hiperglicemia"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.5292,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "salbutamol",
+          "efeito": "diminuição do efeito hipoglicêmico da gliclazida, podendo causar hiperglicemia"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "salbutamol IV",
+          "efeito": "Diminuição do efeito hipoglicêmico da gliclazida e ocorrência de hiperglicemia"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8542,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ritodrina",
+          "efeito": "diminuição do efeito hipoglicêmico da gliclazida, podendo causar hiperglicemia"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "ritodrina",
+          "efeito": "Diminuição do efeito hipoglicêmico da gliclazida e ocorrência de hiperglicemia"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8542,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "terbutalina",
+          "efeito": "diminuição do efeito hipoglicêmico da gliclazida, podendo causar hiperglicemia"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "terbutalina",
+          "efeito": "Diminuição do efeito hipoglicêmico da gliclazida e ocorrência de hiperglicemia"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.8542,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "danozol",
+          "efeito": "diminuição do efeito hipoglicêmico da gliclazida, podendo causar hiperglicemia"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "danozol",
+          "efeito": "Diminuição do efeito hipoglicêmico da gliclazida e ocorrência de hiperglicemia"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6375,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "Erva de São João",
+          "efeito": "diminuição do efeito hipoglicêmico da gliclazida, podendo causar hiperglicemia"
+        },
+        "extraida": {
+          "tipo": "ALIMENTO",
+          "referencia": "Erva de São João (Hypericum perforatum)",
+          "efeito": "Diminuição do efeito hipoglicêmico da gliclazida e ocorrência de hiperglicemia"
+        }
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.7118,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "fluoroquinolonas",
+          "efeito": "alteração da glicemia (hiperglicemia ou hipoglicemia), especialmente em pacientes idosos"
+        },
+        "extraida": {
+          "tipo": "CLASSE",
+          "referencia": "fluoroquinolonas",
+          "efeito": "Alteração da glicemia (níveis de açúcar sanguíneos elevados e níveis de açúcar sanguíneos baixos)"
+        }
+      },
+      {
+        "classificacao": "FN",
+        "score": 0.0583,
+        "gabarito": {
+          "tipo": "CLASSE",
+          "referencia": "anticoagulantes",
+          "efeito": "a gliclazida pode aumentar os efeitos destes medicamentos"
+        },
+        "extraida": null
+      },
+      {
+        "classificacao": "TP",
+        "score": 0.6769,
+        "gabarito": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "varfarina",
+          "efeito": "a gliclazida pode aumentar os efeitos deste medicamento"
+        },
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "varfarina",
+          "efeito": "Aumento dos efeitos de medicamentos anticoagulantes"
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.0457,
+        "gabarito": null,
+        "extraida": {
+          "tipo": "NOME_DIRETO",
+          "referencia": "claritomicina",
+          "efeito": "Efeitos hipoglicêmicos e sinais da baixa do nível de açúcar no sangue"
+        }
+      },
+      {
+        "classificacao": "FP",
+        "score": 0.2,
+        "gabarito": null,
+        "extraida": {
+          "tipo": "ALIMENTO",
+          "referencia": "bebidas alcoólicas",
+          "efeito": "Modificar o controle da diabetes de maneira imprevisível"
+        }
+      }
+    ]
+  }
+}
